@@ -1,4 +1,8 @@
 # RufasSlider - v2.7
+
+Click on the large tar.gz file under releases for all source & binaries.
+
+
 ## What's new:
 
 
