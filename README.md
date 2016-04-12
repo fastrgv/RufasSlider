@@ -1,9 +1,15 @@
-# RufasSlider - v2.7
+# RufasSlider - v2.7.1
 
 Click on the large tar.gz file under releases for all source & binaries.
 
 
 ## What's new:
+
+**v 2.7.1 - 12apr16**
+
+* Revised linux compilation to use static versions of SDL2, SFML for enhanced portability.  Also added local library softlinks necessary for execution on some distros.
+* Mac OS-X compilation uses static versions for all non-standard libraries.
+
 
 
 **v 2.7 - 20feb16**
