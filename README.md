@@ -1,15 +1,17 @@
-# RufasSlider - v2.7.1
-
-Click on the large tar.gz file under releases for all source & binaries.
-
-
+# RufasSlider - v2.7.2
 ## What's new:
+
+
+**v 2.7.2 - 14jul16**
+
+* Added randomizer to flatAZ, flat7 so each run is different.
+* Found and corrected a logic error in most slider games by defining and using a "same" function to determine nearness of two positions.
+
 
 **v 2.7.1 - 12apr16**
 
 * Revised linux compilation to use static versions of SDL2, SFML for enhanced portability.  Also added local library softlinks necessary for execution on some distros.
 * Mac OS-X compilation uses static versions for all non-standard libraries.
-
 
 
 **v 2.7 - 20feb16**
@@ -71,7 +73,7 @@ Click on the large tar.gz file under releases for all source & binaries.
 ------------------------------------------------------------------
 ## RufasSlider Introduction
 
-RufaSlider contains many block slider puzzles including the Klotski-style family and the Traffic-Rush family.
+RufaSlider contains 16 different block slider puzzles including a Klotski-style family, a DirtyDozen family, and a Traffic-Rush family.
 
 The Klotski family uses rectangles of 4 sizes: 1x1, 2x2, 1x2, 2x1. The objective in each game is stated near the window top, but usually involves moving a large block to a specified location within the window.
 
@@ -104,16 +106,18 @@ Works on Macs running OS-X and PCs running GNU/Linux.
 -------------------------------------------------------
 
 ## Build Instructions:
-MacOSX:
+**MacOSX** => ocmp.sh:
 
-ocmp.sh:  
-static build script for generating a portable executable that will run on most OS-X platforms whether or not they have non-standard libraries such as GLEW, SDL2, SFML installed.  I have included the static X.a files necessary to recompile under ./libLocal/osx_static/.
+script for OSX that references [delivered] local copies of all nonstandard libraries in ./osxlibs/.  The intent is to allow anyone with a c++ compiler on their Mac to build without having to install these nonstandard libraries.
 
 ------------------------------------------------------
-GNU/Linux:  
+**GNU/Linux** => scmp.sh
 
-lcmp.sh:  
-utilizes the relocatable libraries that I deliver in this bundle under ./libLocal/.  I use this to build the gnu/linux executables that I deliver, which have a good chance of running in the presence of ./libLocal, whether or not your system has the libraries in it.  There are two uncommon external libraries needed:  SDL2 and SFML, which I have included in ./libLocal/.
+utilizes semi-standard shared libraries that are delivered in this bundle under ./gnulibs/, along with the non-standard static libraries SDL2 & SFML.  This was used to build the executable, which should run in the presence of ./gnulibs/, whether or not your system already has those libraries.  The runtime loader will prefer system libraries if they are present.
+
+The authoring build system is OpenSUSE v13.2 which uses GLIBC 2.14.  This generally means that if your linux distro uses glibc v2.14 or newer, then the prebuilt binary should probably run on your system (and be rebuildable).
+
+If the delivered linux binary does not run, rebuild using scmp.sh.
 
 
 ----------------------------------------------
@@ -123,13 +127,33 @@ is a script that compiles either bfs or bfsr or bfsl on any platform.
 
 -----------------------------------------------
 
+In the unlikely event that the delivered **linux** binary does not run, and recompilation fails to create a usable executable, try these...
+
+-------------------------------------------------------
+### Steps to compile and run on "other" linux distros.
+
+* Install Cmake...complicated from source, easy using a system update.
+
+* Install SDL2-dev.
+	* First, try a system update of libSDL2-devel.
+	* Downloading and building from source is the hardest way, but still easy.  Requires Cmake.
+
+* Install SFML-dev.
+	* First, try a system update of sfml-dev or libsfml-devel.  
+	* Building from source using Cmake is difficult because there are several prerequisites, but if you add them one at a time based on the cmake error messages, it is achievable.
+
+At this point, the delivered compile script is likely to work without mods.
+
+
+
 ## Running:
 
 Unzip the archive and you will see a new directory appear with a name like bundle+date", that you should rename to something like install_directory.  
 
-Linux users should then cd to install_directory, then, at the command line, type "rufas_gnu" to access any game.
+Linux users should then cd to install_directory, then, at the command line, type "rufaslider_gnu" to access any game.  You may also double click its icon in file manager.
 
-Mac users please note:  this game is initiated by opening a terminal, navigating to the install_directory, and typing "rufas_osx" on the command line.
+Mac users note that this game may be initiated in two ways.  First, by opening a terminal, navigating to the install_directory, and typing "rufaslider_osx" on the command line.   Second by navigating to the installation directory in Finder and clicking the "rufaslider.app" icon named "rufaslider".
+ 
 
 The install_directory should contain subdirectories named "data", "libLocal", "incLocal", "puzzles".
 
@@ -184,4 +208,10 @@ are files copyrighted by Lode Vandevenne and so marked with all the details of t
 
 ### Other Credits and Thanks:
 Serhiy Grabarchuk and Peter Grabarchuk for their "Hole in One", "Hole in One plus 4", "Nine", and "Four Suits" puzzles.
+
+----------------------------------------------------------
+
+## Best Download Site for all my games:
+https://github.com/fastrgv?tab=repositories
+
 
