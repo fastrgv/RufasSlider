@@ -1,7 +1,10 @@
 ![screenshot](https://github.com/fastrgv/RufasSlider/blob/master/nexus.jpg)
 
 
-Click on the large tar.gz file under releases to download all source & binaries (both Mac & Linux)
+Click on the large tar.gz file under releases to download all source & binaries (both Mac & Linux), or use this link:
+
+https://github.com/fastrgv/RufasSlider/releases/download/v2.7.2/rslid14jul16.tar.gz
+
 
 # RufasSlider - v2.7.2
 ## What's new:
