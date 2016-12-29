@@ -3,11 +3,21 @@
 
 Click on the large tar.gz file under releases to download all source & binaries (both Mac & Linux), or use this link:
 
-https://github.com/fastrgv/RufasSlider/releases/download/v2.7.2/rslid14jul16.tar.gz
+https://github.com/fastrgv/RufasSlider/releases/download/v2.7.3/rslid30dec16.tar.gz
 
 
-# RufasSlider - v2.7.2
+
+# RufasSlider - v2.7.3
 ## What's new:
+
+**v 2.7.3 - 30dec16**
+
+* Updated linux compile scripts to use the gnat g++ compiler in case the gnu g++ compiler is absent.
+* Added numerical block selector on the nine puzzle (nine.cc).
+* Added option to show block letters in rush & bslider that match autosolver output solutions.
+* Added 10 more traffic rush puzzles.
+* Improved coding to elliminate hard constants and to support Intel Skylake embedded graphics.
+* Improved linux build system to maximize distro-compatibility.
 
 
 **v 2.7.2 - 14jul16**
@@ -123,9 +133,18 @@ script for OSX that references [delivered] local copies of all nonstandard libra
 
 utilizes semi-standard shared libraries that are delivered in this bundle under ./gnulibs/, along with the non-standard static libraries SDL2 & SFML.  This was used to build the executable, which should run in the presence of ./gnulibs/, whether or not your system already has those libraries.  The runtime loader will prefer system libraries if they are present.
 
-The authoring build system is OpenSUSE v13.2 which uses GLIBC 2.14.  This generally means that if your linux distro uses glibc v2.14 or newer, then the prebuilt binary should probably run on your system (and be rebuildable).
-
 If the delivered linux binary does not run, rebuild using scmp.sh.
+
+
+### Minor Link Problems during linux build:
+
+On a linux build machine, you might have minor link errors, depending on its configuration.  If "libGL" cannot be found, this literally means "libGL.so" was absent.  But you might have "libGL.so.1" present.  In this case, simply create a softlink by changing to the libGL directory, then type the line:
+
+sudo ln -s libGL.so.1 libGL.so  (and enter the admin password)
+
+whence the linker should now be able to find what it wants.  But if there is more than one file libGL.so present on your system, make sure you use the best one;  i.e. the one that uses your accelerated graphics.
+
+
 
 
 ----------------------------------------------
