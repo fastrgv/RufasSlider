@@ -3,12 +3,178 @@
 
 Click on the large tar.gz file under releases to download all source & binaries (both Mac & Linux), or use this link:
 
-https://github.com/fastrgv/RufasSlider/releases/download/v2.7.4/rslid4jan17.tar.gz
 
-
-
-# RufasSlider - v2.7.4
+# RufasSlider
 ## What's new:
+
+
+**v 2.7.5 - 27apr17**
+
+* Embedded AutoSolvers into rush, bslider, dirty12, maboy, and linkRings apps.  Simply press the "=" key to single step closer to the solution, regardless of current game state.  You can use the autosolvers to demonstrate how a complete solution is possible, or merely to give you a head start at getting out of a jam.  Thusly, many of these puzzles have become much friendlier for the casual puzzler.
+* Improved messaging in linkRings puzzle.
+
+See full revision history at end of this file
+
+
+------------------------------------------------------------------
+## RufasSlider Introduction
+
+RufaSlider is a collection of 16 different block slider puzzles for kids and casual puzzlers.  It includes a Klotski-style family, a DirtyDozen family, and a Traffic-Rush family.  And now these puzzle families come with AutoSolvers to help you.
+
+The Klotski family uses rectangles of 4 sizes: 1x1, 2x2, 1x2, 2x1. The objective in each game is stated near the window top, but usually involves moving a large block to a specified location within the window.  
+
+The DirtyDozen family is similar except there are L-shaped puzzle pieces.
+
+The Traffic-Rush family uses data, with 2x1, 1x2, 3x1, 1x3 rectangles. Here, the long rectangles represent cars or trucks that can only move [roll] lengthwise...the goal being to move the red car toward the "exit door".
+
+Note that a game description files are simple text files that allows users to define additional puzzles.
+
+Several other classic block slider games are included:  Fifteen, Eight, Nine, Panama, MaBoy, GetMyGoat, 2-versions of HoleInOne, Suits, and 2-versions of LinkRings.  
+
+To move a block, use the arrow keys. If the automatic block selector chooses the wrong block, simply click the cursor on the desired block before using the arrow key. Thusly, the games are laptop friendly.
+
+Finally, there are autosolvers embedded into the TrafficRush, Klotski, DirtyDozen, LinkRings and Maboy games to be used interactively, using the (=)-key.
+
+Works on Macs running OS-X and PCs running GNU/Linux.
+
+--------------------------------------
+## Features
+
+ * Uses SDL2;
+ * Works on OS-X Retina displays;
+ * Uses SFML for applause sound;
+ * all runtime files are in ./data/
+ * all game data files are in ./puzzles/
+
+----------------------------------------------
+
+## Build Requirements:
+
+ * a recent g++ compiler that supports -std=c++11, or an GNAT-GPL Ada compiler from libre.adacore.com/download/.
+ * graphics card that supports OpenGL version 3.3 or later;
+ * Xcode g++ compiler, if using OS-X;
+
+-------------------------------------------------------
+
+## Build Instructions:
+**MacOSX** => ocmpss.sh:
+
+script for OSX that references [delivered] local copies of all nonstandard libraries in ./osxlibs/.  The intent is to allow anyone with Xcode and a g++ compiler on their Mac to build without having to install these nonstandard libraries.
+
+------------------------------------------------------
+**GNU/Linux** => lcmpd.sh
+
+utilizes semi-standard shared libraries that are delivered in this bundle under ./gnulibs/, along with the non-standard static libraries SDL2 & SFML.  This was used to build the executable, which should run in the presence of ./gnulibs/, whether or not your system already has those libraries.  The runtime loader will prefer system libraries if they are present.
+
+If the delivered linux binary does not run, rebuild using lcmpd.sh.  In case of problems, try installing gnat from Ada Libre because the g++ compiler that comes with it works fine.
+
+### Fixable Link Problems during linux build:
+
+On a linux build machine, you might have minor link errors, depending on its configuration.  If "libGL" cannot be found, this literally means "libGL.so" was absent.  But you might have "libGL.so.1" present.  In this case, simply create a softlink by changing to the libGL directory, then type the line:
+
+sudo ln -s libGL.so.1 libGL.so  (and enter the admin password)
+
+whence the linker should now be able to find what it wants.  But if there is more than one file libGL.so present on your system, make sure you use the best one;  i.e. the one that corresponds to your accelerated graphics.
+
+
+----------------------------------------------
+
+bfscmp.sh:
+is a script that compiles either bfs or bfsr or bfsl on any platform.
+
+-----------------------------------------------
+
+In the unlikely event that the delivered **linux** binary does not run, and recompilation fails to create a usable executable, try these...
+
+-------------------------------------------------------
+### Steps to compile and run on "other" linux distros.
+
+* Install Cmake...complicated from source, easy using a system update.
+
+* Install SDL2-dev.
+	* First, try a system update of libSDL2-devel.
+	* Downloading and building from source is the hardest way, but still easy.  Requires Cmake.
+
+* Install SFML-dev.
+	* First, try a system update of sfml-dev or libsfml-devel.  
+	* Building from source using Cmake is difficult because there are several prerequisites, but if you add them one at a time based on the cmake error messages, it is achievable.
+
+At this point, the delivered compile script is likely to work without mods.
+
+
+
+## Running:
+
+Unzip the archive and you will see a new directory appear with a name like bundle+date", that you should rename to something like install_directory.  
+
+Linux users should then cd to install_directory, then, at the command line, type "rufaslider_gnu" to access any game.  You may also double click its icon in file manager.
+
+Mac users note that this game may be initiated in two ways.  First, by opening a terminal, navigating to the install_directory, and typing "rufaslider_osx" on the command line.   Second by navigating to the installation directory in Finder and clicking the "rufaslider.app" icon named "rufaslider".
+ 
+The install_directory should contain subdirectories named "data", "libLocal", "incLocal", "puzzles".
+
+To move a block, use the arrow keys  (up),(dn),(lf),(rt);  If there is an ambiguity and the "automatic" selection mechanism chooses the wrong block to be moved, simply click on the desired block with the cursor before hitting a directional arrow.  At any time, hit the letter (r) to reset/restart, or (esc) to quit.  
+
+For Rush, Bslider and DirtyDozen, you use the (n) key to go to the next puzzle, which in general is more difficult.  The (p) key takes you to the previous puzzle.
+
+And for those times when a solution seems impossible, the more difficult puzzle families have an AutoSolver function using the (=)-key to step closer towards the solution:  rush, bslider, dirty12, maboy, and linkRings 
+
+Please send questions, comments or corrections to
+
+	fastrgv@gmail.com
+
+## Legal Mumbo Jumbo:
+
+RufasSlider itself is covered by the GNU GPL v3 as indicated in the sources:
+
+
+ Copyright (C) 2017  <fastrgv@gmail.com>
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You may read the full text of the GNU General Public License
+ at <http://www.gnu.org/licenses/>.
+
+----------------------------------------------------------
+
+## Media Files for RufasSlider:
+
+### General Note
+The particular choice of sound file delivered is not essential to the function of the game and is easily replaced.  This software is primarily intended as a tutorial example of modern OpenGL methods.  The only requirements are that sounds be in WAV format.
+
+### SoundFile (small-applause.wav)
+...are from freesound.org and is covered by the Creative Commons Attribution noncommercial license documented in the accompanying file creativeCommons.txt.   See "small-applause.txt" for details and URL.
+
+
+### ImageFiles (x.png)
+...for text-textures were created using gimp and are also covered by the GNU GPL v3 license.  Thanks to unluckystudio.com [Sujit Kumar Yadav] for car sprites, whose colors I modified slightly with GIMP, and to OpenGameArt.org for the playing card symbols under a cc-by-3.0 license (see http://creativecommons.org/) uploaded there by IronStarMedia.co.uk
+
+
+### LodePNG (png loader module: lodepng.cpp lodepng.h)
+are files copyrighted by Lode Vandevenne and so marked with all the details of their permitted uses near the tops of those two files.
+
+### Other Credits and Thanks:
+Serhiy Grabarchuk and Peter Grabarchuk for their "Hole in One", "Hole in One plus 4", "Nine", and "Four Suits" puzzles.
+
+----------------------------------------------------------
+tags:  puzzle, rush-hour, klotski, slider
+
+----------------------------------------------------------
+
+## Best Download Site for all my games:
+https://github.com/fastrgv?tab=repositories
+
+====================================================
+
+## Older Revision History
 
 **v 2.7.4 - 4jan17**
 
@@ -94,159 +260,5 @@ https://github.com/fastrgv/RufasSlider/releases/download/v2.7.4/rslid4jan17.tar.
 **v 2.0 - 28mar15**
 
 * deleted unlinkRings;  instead simply type "linkRings i".  In fact any command line parameter will now initiate the inverse puzzle.
-
-
-------------------------------------------------------------------
-## RufasSlider Introduction
-
-RufaSlider contains 16 different block slider puzzles including a Klotski-style family, a DirtyDozen family, and a Traffic-Rush family.
-
-The Klotski family uses rectangles of 4 sizes: 1x1, 2x2, 1x2, 2x1. The objective in each game is stated near the window top, but usually involves moving a large block to a specified location within the window.
-
-The Traffic-Rush family uses data, with 2x1, 1x2, 3x1, 1x3 rectangles. Here, the long rectangles represent cars or trucks that can only move [roll] lengthwise...the goal being to move the red car toward the "garage door" on the right.
-
-Note that either game description file is a simple text file with a particular format that allows users to easily define additional puzzles.
-
-Several other classic block slider games are included:  Fifteen, Eight, Nine, Panama, MaBoy, GetMyGoat, 2-versions of HoleInOne, Suits, DirtyDozen, and 2-versions of LinkRings.  There are also two solvers included called "bfs" (breadth-first-search), and "bfsr" that work for most bslider/rush puzzles.  It expects a puzzle file name as input, and outputs a text file with a list of moves indicated as a block number and direction.  Note that the (x)-key toggles the display of block numbers to enable following a solution generated by a solver.
-
-To move a block, use the arrow keys. If the automatic block selector chooses the wrong block, simply click the cursor on the desired block before using the arrow key. Thusly, the games are laptop friendly.
-
-Works on Macs running OS-X and PCs running GNU/Linux.
-
---------------------------------------
-## Features
-
- * Uses SDL2;
- * Works on OS-X Retina displays;
- * Uses SFML for applause sound;
- * all runtime files are in ./data/
- * all game data files are in ./puzzles/
-
-----------------------------------------------
-
-## Build Requirements:
-
- * a recent gcc compiler that supports -std=c++11;
- * graphics card that supports OpenGL version 3.3 or later;
-
--------------------------------------------------------
-
-## Build Instructions:
-**MacOSX** => ocmp.sh:
-
-script for OSX that references [delivered] local copies of all nonstandard libraries in ./osxlibs/.  The intent is to allow anyone with a c++ compiler on their Mac to build without having to install these nonstandard libraries.
-
-------------------------------------------------------
-**GNU/Linux** => scmp.sh
-
-utilizes semi-standard shared libraries that are delivered in this bundle under ./gnulibs/, along with the non-standard static libraries SDL2 & SFML.  This was used to build the executable, which should run in the presence of ./gnulibs/, whether or not your system already has those libraries.  The runtime loader will prefer system libraries if they are present.
-
-If the delivered linux binary does not run, rebuild using scmp.sh.
-
-
-### Minor Link Problems during linux build:
-
-On a linux build machine, you might have minor link errors, depending on its configuration.  If "libGL" cannot be found, this literally means "libGL.so" was absent.  But you might have "libGL.so.1" present.  In this case, simply create a softlink by changing to the libGL directory, then type the line:
-
-sudo ln -s libGL.so.1 libGL.so  (and enter the admin password)
-
-whence the linker should now be able to find what it wants.  But if there is more than one file libGL.so present on your system, make sure you use the best one;  i.e. the one that uses your accelerated graphics.
-
-
-
-
-----------------------------------------------
-
-bfscmp.sh:
-is a script that compiles either bfs or bfsr or bfsl on any platform.
-
------------------------------------------------
-
-In the unlikely event that the delivered **linux** binary does not run, and recompilation fails to create a usable executable, try these...
-
--------------------------------------------------------
-### Steps to compile and run on "other" linux distros.
-
-* Install Cmake...complicated from source, easy using a system update.
-
-* Install SDL2-dev.
-	* First, try a system update of libSDL2-devel.
-	* Downloading and building from source is the hardest way, but still easy.  Requires Cmake.
-
-* Install SFML-dev.
-	* First, try a system update of sfml-dev or libsfml-devel.  
-	* Building from source using Cmake is difficult because there are several prerequisites, but if you add them one at a time based on the cmake error messages, it is achievable.
-
-At this point, the delivered compile script is likely to work without mods.
-
-
-
-## Running:
-
-Unzip the archive and you will see a new directory appear with a name like bundle+date", that you should rename to something like install_directory.  
-
-Linux users should then cd to install_directory, then, at the command line, type "rufaslider_gnu" to access any game.  You may also double click its icon in file manager.
-
-Mac users note that this game may be initiated in two ways.  First, by opening a terminal, navigating to the install_directory, and typing "rufaslider_osx" on the command line.   Second by navigating to the installation directory in Finder and clicking the "rufaslider.app" icon named "rufaslider".
- 
-
-The install_directory should contain subdirectories named "data", "libLocal", "incLocal", "puzzles".
-
-To move a block, use the arrow keys  (up),(dn),(lf),(rt);  If there is an ambiguity and the "automatic" selection mechanism chooses the wrong block to be moved, simply click on the desired block with the cursor before hitting a directional arrow.  At any time, hit the letter (r) to reset/restart, or (esc) to quit.  
-
-For Rush, Bslider and DirtyDozen, you use the (n) key to go to the next puzzle, which in general is more difficult.  The (p) key takes you to the previous puzzle.
-
-Remember that (x) toggles block letters that allow you to follow solution instructions from one of the autosolvers.
-
-
-Please send questions, comments or corrections to
-
-	fastrgv@gmail.com
-
-## Legal Mumbo Jumbo:
-
-RufasSlider itself is covered by the GNU GPL v3 as indicated in the sources:
-
-
- Copyright (C) 2016  <fastrgv@gmail.com>
-
- This program is free software: you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation, either version 3 of the License, or
- (at your option) any later version.
-
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
-
- You may read the full text of the GNU General Public License
- at <http://www.gnu.org/licenses/>.
-
-----------------------------------------------------------
-
-## Media Files for RufasSlider:
-
-### General Note
-The particular choice of sound file delivered is not essential to the function of the game and is easily replaced.  This software is primarily intended as a tutorial example of modern OpenGL methods.  The only requirements are that sounds be in WAV format.
-
-### SoundFile (small-applause.wav)
-...are from freesound.org and is covered by the Creative Commons Attribution noncommercial license documented in the accompanying file creativeCommons.txt.   See "small-applause.txt" for details and URL.
-
-
-### ImageFiles (x.png)
-...for text-textures were created using gimp and are also covered by the GNU GPL v3 license.  Thanks to unluckystudio.com [Sujit Kumar Yadav] for car sprites, whose colors I modified slightly with GIMP, and to OpenGameArt.org for the playing card symbols under a cc-by-3.0 license (see http://creativecommons.org/) uploaded there by IronStarMedia.co.uk
-
-
-### LodePNG (png loader module: lodepng.cpp lodepng.h)
-are files copyrighted by Lode Vandevenne and so marked with all the details of their permitted uses near the tops of those two files.
-
-### Other Credits and Thanks:
-Serhiy Grabarchuk and Peter Grabarchuk for their "Hole in One", "Hole in One plus 4", "Nine", and "Four Suits" puzzles.
-
-----------------------------------------------------------
-
-## Best Download Site for all my games:
-https://github.com/fastrgv?tab=repositories
 
 
