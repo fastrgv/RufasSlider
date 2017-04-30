@@ -3,7 +3,7 @@
 
 Click on the large tar.gz file under releases to download all source & binaries (both Mac & Linux), or use this link:
 
-
+https://github.com/fastrgv/RufasSlider/releases/download/v2.7.6/rslid30apr17.tar.gz
 
 
 # RufasSlider
