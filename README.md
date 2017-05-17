@@ -3,18 +3,22 @@
 
 Click on the large tar.gz file under releases to download all source & binaries (both Mac & Linux), or use this link:
 
-https://github.com/fastrgv/RufasSlider/releases/download/v2.7.6/rslid30apr17.tar.gz
+
 
 
 # RufasSlider
 ## What's new:
 
-**v 2.7.6 - 30apr17**
+**v 2.7.7 - 17may17**
+* Executable names simplified now that OSX has its own directory.
+* Enhanced functionality of flat7, flatAZ.
+* Better help screens.
+* Added missing gnu libs necessary to run on some linux hosts.
 
+**v 2.7.6 - 30apr17**
 * An entirely new app structure now allows playing multiple different puzzles without restarting, making it much easier to use.
 
 **v 2.7.5 - 27apr17**
-
 * Embedded AutoSolvers into rush, bslider, dirty12, maboy, and linkRings apps.  Simply press the "=" key to single step closer to the solution, regardless of current game state.  You can use the autosolvers to demonstrate how a complete solution is possible, or merely to give you a head start at getting out of a jam.  Thusly, many of these puzzles have become much friendlier for the casual puzzler.
 * Improved messaging in linkRings puzzle.
 
