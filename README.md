@@ -10,6 +10,13 @@ https://github.com/fastrgv/RufasSlider/releases/download/v2.7.7/rslid20may17.tar
 # RufasSlider
 ## What's new:
 
+**ver 2.7.8 -- 21oct17**
+* Updated linux scripts to use a) SFML v2.4.2;  b) AdaCore 2017;
+* Note that AdaCore 2017 works on OS-X with no changes;
+* Added startup messages listing OGL profile & version;
+* Corrected relative paths to begin with ./ in scripts;
+* Cleaned up various codes and libraries;
+
 **v 2.7.7 - 17may17**
 * Executable names simplified now that OSX has its own directory.
 * Enhanced functionality of flat7, flatAZ.
@@ -67,16 +74,16 @@ Works on Macs running OS-X and PCs running GNU/Linux.
 -------------------------------------------------------
 
 ## Build Instructions:
-**MacOSX** => ocmpss.sh:
+**MacOSX** => osxAll.sh:
 
 script for OSX that references [delivered] local copies of all nonstandard libraries in ./osxlibs/.  The intent is to allow anyone with Xcode and a g++ compiler on their Mac to build without having to install these nonstandard libraries.
 
 ------------------------------------------------------
-**GNU/Linux** => lcmpd.sh
+**GNU/Linux** => gnuAll.sh
 
 utilizes semi-standard shared libraries that are delivered in this bundle under ./gnulibs/, along with the non-standard static libraries SDL2 & SFML.  This was used to build the executable, which should run in the presence of ./gnulibs/, whether or not your system already has those libraries.  The runtime loader will prefer system libraries if they are present.
 
-If the delivered linux binary does not run, rebuild using lcmpd.sh.  In case of problems, try installing gnat from Ada Libre because the g++ compiler that comes with it works fine.
+If the delivered linux binary does not run, rebuild using gnuAll.sh.  In case of problems, try installing gnat from Ada Libre because the g++ compiler that comes with it works fine.
 
 ### Fixable Link Problems during linux build:
 
