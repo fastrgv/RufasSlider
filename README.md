@@ -5,29 +5,17 @@ Click on the large tar.gz file under releases to download all source & binaries 
 
 https://github.com/fastrgv/RufasSlider/releases/download/v2.7.8/rslid21oct17.tar.gz
 
-
 # RufasSlider
 ## What's new:
 
-**ver 2.7.8 -- 21oct17**
-* Updated linux scripts to use a) SFML v2.4.2;  b) AdaCore 2017;
-* Note that AdaCore 2017 works on OS-X with no changes;
-* Added startup messages listing OGL profile & version;
-* Corrected relative paths to begin with ./ in scripts;
-* Cleaned up various codes and libraries;
+**ver 2.8.0 -- 8nov17**
 
-**v 2.7.7 - 17may17**
-* Executable names simplified now that OSX has its own directory.
-* Enhanced functionality of flat7, flatAZ.
-* Better help screens.
-* Added missing gnu libs necessary to run on some linux hosts.
+* added prebuilt executables for msWindows;
+* added working build scripts for msWindows;
+* linux binaries now put into ./bin/gnu/;
+* refined sizing to fit laptop screens;
+* improved code;  avoided memory leaks in prior releases;
 
-**v 2.7.6 - 30apr17**
-* An entirely new app structure now allows playing multiple different puzzles without restarting, making it much easier to use.
-
-**v 2.7.5 - 27apr17**
-* Embedded AutoSolvers into rush, bslider, dirty12, maboy, and linkRings apps.  Simply press the "=" key to single step closer to the solution, regardless of current game state.  You can use the autosolvers to demonstrate how a complete solution is possible, or merely to give you a head start at getting out of a jam.  Thusly, many of these puzzles have become much friendlier for the casual puzzler.
-* Improved messaging in linkRings puzzle.
 
 See full revision history at end of this file
 
@@ -35,7 +23,9 @@ See full revision history at end of this file
 ------------------------------------------------------------------
 ## RufasSlider Introduction
 
-RufaSlider is a collection of 16 different block slider puzzles for kids and casual puzzlers.  It includes a Klotski-style family, a DirtyDozen family, and a Traffic-Rush family.  And now these puzzle families come with AutoSolvers to help you.
+RufaSlider is a collection of 16 different block slider puzzles for kids and casual puzzlers that works on laptops and PCs running Windows, OSX or GNU/Linux.
+
+It includes a Klotski-style family, a DirtyDozen family, and a Traffic-Rush family.  And now these puzzle families come with AutoSolvers to help you.
 
 The Klotski family uses rectangles of 4 sizes: 1x1, 2x2, 1x2, 2x1. The objective in each game is stated near the window top, but usually involves moving a large block to a specified location within the window.  
 
@@ -51,38 +41,46 @@ To move a block, use the arrow keys. If the automatic block selector chooses the
 
 Finally, there are autosolvers embedded into the TrafficRush, Klotski, DirtyDozen, LinkRings and Maboy games to be used interactively, using the (=)-key.  This provides an amazing tool to learn to solve seemingly hopeless problems.
 
-Works on Macs running OS-X and PCs running GNU/Linux.
-
 --------------------------------------
 ## Features
 
- * Uses SDL2;
- * Works on OS-X Retina displays;
- * Uses SFML for applause sound;
- * all runtime files are in ./data/
- * all game data files are in ./puzzles/
+* Works on PCs or laptops running Windows, OSX or GNU/Linux.  And if GNAT is installed you can build it yourself!  But first try the delivered, prebuilt binaries.
+* Windows, GNU/Linux and OSX binaries provided, as well as full source.
+* Laptop friendly controls;  supports Mac Retina displays.
+* Uses SDL2;
+* Uses SFML for applause sound;
+* all runtime files are in ./data/
+* all game data files are in ./puzzles/
 
 ----------------------------------------------
 
 ## Build Requirements:
 
- * a recent g++ compiler that supports -std=c++11, or an GNAT-GPL Ada compiler from libre.adacore.com/download/.
+ * a recent g++ compiler that supports -std=c++11, OR a GNAT-GPL Ada compiler from libre.adacore.com/download/ [that includes a nice g++ compiler]
  * graphics card that supports OpenGL version 3.3 or later;
- * Xcode g++ compiler, if using OS-X;
+ * Xcode g++ compiler, if using OSX;
 
 -------------------------------------------------------
 
 ## Build Instructions:
+
+-------------------------------------------------------
+**msWin32** => winAll.bat
+
+build script that requires libraries included in ./libs/win/.
+
+-------------------------------------------------------
+
 **MacOSX** => osxAll.sh:
 
 script for OSX that references [delivered] local copies of all nonstandard libraries in ./osxlibs/.  The intent is to allow anyone with Xcode and a g++ compiler on their Mac to build without having to install these nonstandard libraries.
 
 ------------------------------------------------------
-**GNU/Linux** => gnuAll.sh
+**GNU/Linux** => gnuAll.sh:
 
 utilizes semi-standard shared libraries that are delivered in this bundle under ./gnulibs/, along with the non-standard static libraries SDL2 & SFML.  This was used to build the executable, which should run in the presence of ./gnulibs/, whether or not your system already has those libraries.  The runtime loader will prefer system libraries if they are present.
 
-If the delivered linux binary does not run, rebuild using gnuAll.sh.  In case of problems, try installing gnat from Ada Libre because the g++ compiler that comes with it works fine.
+If the delivered linux binary does not run, rebuild all using gnuAll.sh.  In case of problems, try installing gnat from Ada Libre because the g++ compiler that comes with it works fine.
 
 ### Fixable Link Problems during linux build:
 
@@ -96,14 +94,14 @@ whence the linker should now be able to find what it wants.  But if there is mor
 ----------------------------------------------
 
 bfscmp.sh:
-is a script that compiles either bfs or bfsr or bfsl on any platform.
+is a script that compiles any of the stand-alone solvers:  bfs, bfsr, bfsl, bfsLR on any platform.
 
 -----------------------------------------------
 
 In the unlikely event that the delivered **linux** binary does not run, and recompilation fails to create a usable executable, try these...
 
 -------------------------------------------------------
-### Steps to compile and run on "other" linux distros.
+### Developers:  steps to compile and run on "other" linux distros.
 
 * Install Cmake...complicated from source, easy using a system update.
 
@@ -121,13 +119,15 @@ At this point, the delivered compile script is likely to work without mods.
 
 ## Running:
 
-Unzip the archive and you will see a new directory appear with a name like bundle+date", that you should rename to something like install_directory.  
+Unzip the archive, open a command line terminal, then cd to the install directory.
 
-Linux users should then cd to install_directory, then, at the command line, type "rufaslider_gnu" to access any game.  You may also double click its icon in file manager.
+Windows users type "rufaslid.exe" to display the selector app.  Otherwise you can type the puzzle name directly;  e.g. nine.exe or dirty12.exe
 
-Mac users note that this game may be initiated in two ways.  First, by opening a terminal, navigating to the install_directory, and typing "rufaslider_osx" on the command line.   Second by navigating to the installation directory in Finder and clicking the "rufaslider.app" icon named "rufaslider".
- 
-The install_directory should contain subdirectories named "data", "libLocal", "incLocal", "puzzles".
+Linux users should type "rufaslid_gnu.sh" to access any game.  You may also double click its icon in file manager.
+
+Mac users may open a terminal, navigate to the install_directory, and type "rufaslid_osx.sh" on the command line,  or navigate to the installation directory in Finder and clicking the "rufaslider.app" icon named "rufaslider".
+
+The install_directory should contain subdirectories named "data" & "puzzles".
 
 To move a block, use the arrow keys  (up),(dn),(lf),(rt);  If there is an ambiguity and the "automatic" selection mechanism chooses the wrong block to be moved, simply click on the desired block with the cursor before hitting a directional arrow.  At any time, hit the letter (r) to reset/restart, or (esc) to quit.  
 
@@ -138,6 +138,17 @@ And for those times when a solution seems impossible, the more difficult puzzle 
 Please send questions, comments or corrections to
 
 	fastrgv@gmail.com
+
+
+----------------------------------------------
+
+## what is special about this project?
+Uses the C++ programming language and fully modern OpenGL methods, with textures, shaders and uniforms.  Achieves version 3.3 core profile contexts.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
+
+Focusing on portability and open source freedom, this project relies on a thin SDL2 binding from Dan Vazquez, a thin OpenGL binding from "Lumen", a PNG reader by Stephen Sanguine, and SFML-Audio (because of its elegant audio interface).
+
+
+
 
 ## Legal Mumbo Jumbo:
 
@@ -181,7 +192,7 @@ are files copyrighted by Lode Vandevenne and so marked with all the details of t
 Serhiy Grabarchuk and Peter Grabarchuk for their "Hole in One", "Hole in One plus 4", "Nine", and "Four Suits" puzzles.
 
 ----------------------------------------------------------
-tags:  puzzle, rush-hour, klotski, slider
+tags:  kids, puzzle, rush-hour, klotski, slider
 
 ----------------------------------------------------------
 
@@ -191,6 +202,36 @@ https://github.com/fastrgv?tab=repositories
 ====================================================
 
 ## Older Revision History
+
+
+**ver 2.7.8 -- 21oct17**
+
+* Updated linux scripts to use a) SFML v2.4.2;  b) AdaCore 2017;
+* Note that AdaCore 2017 works on OSX with no changes;
+* Added startup messages listing OGL profile & version;
+* Corrected relative paths to begin with ./ in scripts;
+* Cleaned up various codes and libraries;
+
+
+**v 2.7.7 - 17may17**
+
+* Improved build scripts to enhance portability across different linux distributions.
+* Executable names simplified now that OSX has its own directory.
+* Enhanced functionality of flat7, flatAZ.
+* Better help screens.
+* Added missing gnu libs necessary to run on some linux hosts.
+
+
+**v 2.7.6 - 30apr17**
+
+* An entirely new app structure now allows playing multiple different puzzles without restarting, making it much easier to use.
+
+
+**v 2.7.5 - 27apr17**
+
+* Embedded AutoSolvers into rush, bslider, dirty12, maboy, and linkRings apps.  Simply press the "=" key to single step closer to the solution, regardless of current game state.  You can use the autosolvers to demonstrate how a complete solution is possible, or merely to give you a head start at getting out of a jam.  Thusly, many of these puzzles have become much friendlier for the casual puzzler.
+* Improved messaging in linkRings puzzle.
+
 
 **v 2.7.4 - 4jan17**
 
@@ -219,7 +260,7 @@ https://github.com/fastrgv?tab=repositories
 **v 2.7.1 - 12apr16**
 
 * Revised linux compilation to use static versions of SDL2, SFML for enhanced portability.  Also added local library softlinks necessary for execution on some distros.
-* Mac OS-X compilation uses static versions for all non-standard libraries.
+* Mac OSX compilation uses static versions for all non-standard libraries.
 
 
 **v 2.7 - 20feb16**
@@ -257,7 +298,7 @@ https://github.com/fastrgv?tab=repositories
 **v 2.4 - 30jan16**
 
 * added "suits" slider puzzle (Grabarchuk) whose objective is to move all four suits one step clockwise.  (hint: same trick as panama).
-* now, a single executable provides an entry point for all the puzzles.  This allows the user to point and click to start the puzzle of interest.  Use "rufas_osx" on Mac/OS-X, or "rufas_gnu" on Gnu/Linux.
+* now, a single executable provides an entry point for all the puzzles.  This allows the user to point and click to start the puzzle of interest.  Use "rufas_osx" on Mac/OSX, or "rufas_gnu" on Gnu/Linux.
 
 **v 2.2 - 23aug15**
 
