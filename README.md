@@ -122,7 +122,7 @@ At this point, the delivered compile script is likely to work without mods.
 
 Unzip the archive, open a command line terminal, then cd to the install directory.
 
-Windows users type "rufaslid.exe" to display the selector app.  Otherwise you can type the puzzle name directly;  e.g. nine.exe or dirty12.exe
+Windows users type "rufaslid_win.bat" to display the selector app.  You can also type the puzzle name directly;  e.g. nine.exe or dirty12.exe
 
 Linux users should type "rufaslid_gnu.sh" to access any game.  You may also double click its icon in file manager.
 
