@@ -177,7 +177,8 @@ At this point, the delivered compile script is likely to work without mods.
 ## what is special about this project?
 Uses the C++ programming language and fully modern OpenGL methods, with textures, shaders and uniforms.  Achieves version 3.3 core profile contexts.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
 
-Focusing on portability and open source freedom, this project relies on a thin SDL2 binding from Dan Vazquez, a thin OpenGL binding from "Lumen", a PNG reader by Stephen Sanguine, and SFML-Audio (because of its elegant audio interface).
+Focusing on portability and open source freedom, this project relies on SDL2, a PNG-loader by Lode Vandevenne, and SFML-Audio (because of its elegant audio interface).
+
 
 
 
