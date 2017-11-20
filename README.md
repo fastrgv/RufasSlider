@@ -91,11 +91,11 @@ Now, everyone can follow these remaining steps:
 
 Open a command line terminal, then cd to the install directory.
 
-Windows users type "rufaslid_win.bat" to begin puzzling.
+Windows users type "winslid.bat" to begin puzzling.
 
-Linux users should type "rufaslid_gnu.sh" to access any game.
+Linux users should type "gnuslid.sh" to access any game.
 
-Mac users may open a terminal, navigate to the install_directory, and type "rufaslid_osx.sh" on the command line.
+Mac users may open a terminal, navigate to the install_directory, and type "macslid.sh" on the command line.
 
 
 To move a block, use the arrow keys  (up),(dn),(lf),(rt);  If there is an ambiguity and the "automatic" selection mechanism chooses the wrong block to be moved, simply click on the desired block with the cursor before hitting a directional arrow.  At any time, hit the letter (r) to reset/restart, or (esc) to quit.  
