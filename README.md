@@ -3,11 +3,23 @@
 
 Click on the large tar.gz file under releases to download all source & binaries (both Mac & Linux), or use this link:
 
-https://github.com/fastrgv/RufasSlider/releases/download/v2.8.0/rslid21nov17.tar.gz
+https://github.com/fastrgv/RufasSlider/releases/download/v2.8.0/rsl24nov17.tar.gz
 
 
 # RufasSlider
 ## What's new:
+
+**ver 2.8.4 -- 24nov17**
+
+* simplified Windows setup.
+* improved key & mouse action.
+* now windows recenter when changing size ( b-key or s-key ).
+* upgraded to SDL v2.0.7 to solve a window focus problem.
+
+
+**ver 2.8.3 -- 21nov17**
+
+* Improved selection app to loop through puzzles rather than to use scripts to do that function.  Now the Mac Bundle execution does not terminate after a single puzzle.
 
 
 **ver 2.8.2 -- 19nov17**
