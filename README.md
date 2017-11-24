@@ -75,20 +75,6 @@ Windows users see also "windows-setup.txt".
 
 Unzip the archive. 
 
-Now, this puzzle system delivers 48 executable binaries for Windows, OSX, and Linux.  To "organize" them, they are put into separate directories.  Thusly, there is a bit of extra setup required for Windows users...
-
-Windows users only:  link 2 directories as follows:
-
-	* open a command prompt window AS ADMINISTRATOR;
-	* CD to the install directory;
-	* CD to .\bin\win\
-	* run PREPDIRS.BAT [as administrator]
-	* close the admin command prompt window.
-
-
-
-Now, everyone can follow these remaining steps:
-
 Open a command line terminal, then cd to the install directory.
 
 Windows users type "winslid.bat" to begin puzzling.
