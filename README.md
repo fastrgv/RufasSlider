@@ -9,6 +9,14 @@ https://github.com/fastrgv/RufasSlider/releases/download/v2.8.0/rsl24nov17.tar.g
 # RufasSlider
 ## What's new:
 
+**ver 2.8.5 -- 02apr18**
+
+* Corrected win-test & hooked up autosolver: GetMyGoat [gmg];
+* Updated to lodepng 2018 [Lode Vandevenne];
+* Improved & simplified OSX build system;
+* Uninverted font file;
+
+
 **ver 2.8.4 -- 24nov17**
 
 * simplified Windows setup.
