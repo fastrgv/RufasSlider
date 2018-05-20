@@ -1,0 +1,4 @@
+Where is the source code?
+
+This repository exists for the convenience of gamers, not co-developers.  The tarball contains all the source code, as well as the runtime files for 3 platforms, headers, shaders, textures, music, game files, compilation scripts, nonstandard external libraries, and executables, including a Mac-bundle.  Source code [*.cpp, *.hpp, *.cc, *.h] can be found in the root directory.
+
