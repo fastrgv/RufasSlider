@@ -9,6 +9,14 @@ https://github.com/fastrgv/RufasSlider/releases/download/v2.8.5/rsl2apr18.tar.gz
 # RufasSlider
 ## What's new:
 
+**ver 2.8.6 -- 12aug18**
+
+* Enhanced linux portability by adding shared libs to distribution;
+* Updated to SFML v2.5.0 & compile scripts to match;
+* Fixed unreadable or misplaced text in linkRings, flat7, suits;
+* Fixed auto solvers for dirty12 & maboy.
+* Replaced autosolver for TrafficRush due to failure on Windows.
+
 **ver 2.8.5 -- 02apr18**
 
 * Corrected win-test & hooked up autosolver: GetMyGoat [gmg];
