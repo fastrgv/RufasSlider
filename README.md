@@ -9,54 +9,13 @@ https://github.com/fastrgv/RufasSlider/releases/download/v2.8.6/rsl12aug18.tar.g
 # RufasSlider
 ## What's new:
 
-**ver 2.8.6 -- 12aug18**
+**ver 2.8.7 -- 02sep18**
 
-* Enhanced linux portability by adding shared libs to distribution;
-* Updated to SFML v2.5.0 & compile scripts to match;
-* Fixed unreadable or misplaced text in linkRings, flat7, suits;
-* Fixed auto solvers for dirty12 & maboy.
-* Replaced autosolver for TrafficRush due to failure on Windows.
+* Found & fixed problems with C++ auto solvers.
+* Upgraded the C++ solvers to use improved splaytree code, and to use simpler and/or more robust search keys, including GMG and LinkRings.
+* Now using SDL v207 uniformly in codes for all platforms.
+* Removed Ada solvers;
 
-**ver 2.8.5 -- 02apr18**
-
-* Corrected win-test & hooked up autosolver: GetMyGoat [gmg];
-* Updated to lodepng 2018 [Lode Vandevenne];
-* Improved & simplified OSX build system;
-* Uninverted font file;
-
-
-**ver 2.8.4 -- 24nov17**
-
-* simplified Windows setup.
-* improved key & mouse action.
-* now windows recenter when changing size ( b-key or s-key ).
-* upgraded to SDL v2.0.7 to solve a window focus problem.
-
-
-**ver 2.8.3 -- 21nov17**
-
-* Improved selection app to loop through puzzles rather than to use scripts to do that function.  Now the Mac Bundle execution does not terminate after a single puzzle.
-
-
-**ver 2.8.2 -- 19nov17**
-
-* modified Windows game system to hide executables, DLLs;
-* improved build scripts;
-* now properly handle paths with embedded spaces;
-
-
-**ver 2.8.1 -- 12nov17**
-
-* added scripting that restores the convenience of returning to the selection window without incurring escalating memory use.
-
-
-**ver 2.8.0 -- 8nov17**
-
-* added prebuilt executables for msWindows;
-* added working build scripts for msWindows;
-* linux binaries now put into ./bin/gnu/;
-* refined initial sizing to fit laptop screens;
-* improved code;  avoided memory leaks of prior releases;
 
 
 See full revision history at end of this file
@@ -249,6 +208,55 @@ https://github.com/fastrgv?tab=repositories
 ====================================================
 
 ## Older Revision History
+
+**ver 2.8.6 -- 12aug18**
+
+* Enhanced linux portability by adding shared libs to distribution;
+* Updated to SFML v2.5.0 & compile scripts to match;
+* Fixed unreadable or misplaced text in linkRings, flat7, suits;
+* Fixed auto solvers for dirty12 & maboy.
+* Replaced autosolver for TrafficRush due to failure on Windows.
+
+**ver 2.8.5 -- 02apr18**
+
+* Corrected win-test & hooked up autosolver: GetMyGoat [gmg];
+* Updated to lodepng 2018 [Lode Vandevenne];
+* Improved & simplified OSX build system;
+* Uninverted font file;
+
+
+**ver 2.8.4 -- 24nov17**
+
+* simplified Windows setup.
+* improved key & mouse action.
+* now windows recenter when changing size ( b-key or s-key ).
+* upgraded to SDL v2.0.7 to solve a window focus problem.
+
+
+**ver 2.8.3 -- 21nov17**
+
+* Improved selection app to loop through puzzles rather than to use scripts to do that function.  Now the Mac Bundle execution does not terminate after a single puzzle.
+
+
+**ver 2.8.2 -- 19nov17**
+
+* modified Windows game system to hide executables, DLLs;
+* improved build scripts;
+* now properly handle paths with embedded spaces;
+
+
+**ver 2.8.1 -- 12nov17**
+
+* added scripting that restores the convenience of returning to the selection window without incurring escalating memory use.
+
+
+**ver 2.8.0 -- 8nov17**
+
+* added prebuilt executables for msWindows;
+* added working build scripts for msWindows;
+* linux binaries now put into ./bin/gnu/;
+* refined initial sizing to fit laptop screens;
+* improved code;  avoided memory leaks of prior releases;
 
 
 **ver 2.7.8 -- 21oct17**
