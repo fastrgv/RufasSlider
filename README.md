@@ -9,6 +9,11 @@ https://github.com/fastrgv/RufasSlider/releases/download/v2.8.7/rs2sep18.tar.gz
 # RufasSlider
 ## What's new:
 
+**ver 2.8.8 -- 5dec18**
+
+* Updated to SDL2 v2.0.8 (all 3 platforms);
+
+
 **ver 2.8.7 -- 02sep18**
 
 * Found & fixed problems with C++ auto solvers.
