@@ -5,6 +5,10 @@ Click on the large tar.gz file under releases to download all source & binaries 
 
 https://github.com/fastrgv/RufasSlider/releases/download/v2.8.8/rs5dec18.tar.gz
 
+or for Windows users use this:
+https://github.com/fastrgv/RufasSlider/releases/download/v2.8.8/rs5dec18tar.zip
+
+
 
 # RufasSlider
 ## What's new:
