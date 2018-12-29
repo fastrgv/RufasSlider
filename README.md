@@ -67,10 +67,10 @@ Finally, there are autosolvers embedded into the TrafficRush, Klotski, DirtyDoze
 
 ## Setup and Running:
 
-Windows users see also "windows-setup.txt".
+Windows users see also "windows-setup.txt".  Mac users see "osx-setup.txt".
 
 
-Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this;  but so does the intrinsic command "tar -xf [filename].tar.gz", which extracts everything into the current directory.
+Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
 
 Windows users may see some error messages (that may be ignored) pertaining to directory links.  Directory links are needed only on OSX & Linux.
 
