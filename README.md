@@ -11,6 +11,12 @@ https://github.com/fastrgv/RufasSlider/releases/download/v2.8.8/rsl29dec18.7z
 # RufasSlider
 ## What's new:
 
+**ver 2.9.0 -- 7jan19**
+
+* Repaired block selection errors;
+* Added mouse drag as initiator of block moves;
+* Improved "rush" exit animation;
+
 **ver 2.8.8 -- 5dec18**
 
 * Updated to SDL2 v2.0.8 (all 3 platforms);
