@@ -11,6 +11,11 @@ https://github.com/fastrgv/RufasSlider/releases/download/v2.9.0/rsl8jan19.7z
 # RufasSlider
 ## What's new:
 
+**ver 2.9.1 -- 7mar19**
+
+* Generalized EXEs to allow calling from "home" directory, as well as the directory that contains them.
+
+
 **ver 2.9.0 -- 7jan19**
 
 * Repaired block selection errors;
