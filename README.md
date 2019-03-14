@@ -156,7 +156,7 @@ In the unlikely event that the delivered **linux** binary does not run, AND reco
 -------------------------------------------------------
 ### Developers:  steps to compile and run on "other" linux distros.
 
-* Install Cmake...complicated from source, easy using a system update.
+* Install Cmake...complicated to build from source, but easy using a system update.
 
 * Install SDL2-dev.
 	* First, try a system update of libSDL2-devel.
