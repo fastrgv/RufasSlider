@@ -9,7 +9,18 @@ https://github.com/fastrgv/RufasSlider/releases/download/v2.9.1/rsl6mar19.7z
 
 
 # RufasSlider
+
 ## What's new:
+
+
+**ver 2.9.2 -- 25aug19**
+
+* Updated to SDL2 v209;
+* Solvers now ignore "="-key AFTER win (as they should);
+* Added debug output of object selection to terminal window;
+* Object selections can, in most cases, now be made using either left or right mouse button;
+* Fixed error in using p-key/n-key (Previous/Next) in dirty12;
+
 
 **ver 2.9.1 -- 7mar19**
 
@@ -21,20 +32,6 @@ https://github.com/fastrgv/RufasSlider/releases/download/v2.9.1/rsl6mar19.7z
 * Repaired block selection errors;
 * Added mouse drag as initiator of block moves;
 * Improved "rush" exit animation;
-
-**ver 2.8.8 -- 5dec18**
-
-* Updated to SDL2 v2.0.8 (all 3 platforms);
-
-
-**ver 2.8.7 -- 02sep18**
-
-* Found & fixed problems with C++ auto solvers.
-* Upgraded the C++ solvers to use improved splaytree code, and to use simpler and/or more robust search keys, including GMG and LinkRings.
-* Now using SDL v207 uniformly in codes for all platforms.
-* Removed Ada solvers;
-
-
 
 See full revision history at end of this file
 
@@ -58,6 +55,8 @@ Several other classic block slider games are included:  Fifteen, Eight, Nine, Pa
 
 To move a block, use the arrow keys. If the automatic block selector chooses the wrong block, simply click the cursor on the desired block before using the arrow key. Thusly, the games are laptop friendly.
 
+Rush & maboy now allow mouse drags to initiate the moves.
+
 Finally, there are autosolvers embedded into the TrafficRush, Klotski, DirtyDozen, LinkRings and Maboy games to be used interactively, using the (=)-key.  This provides an amazing tool to learn to solve seemingly hopeless problems.
 
 --------------------------------------
@@ -76,28 +75,31 @@ Finally, there are autosolvers embedded into the TrafficRush, Klotski, DirtyDoze
 
 ## Setup and Running:
 
-Windows users see also "windows-setup.txt".  Mac users see "osx-setup.txt".
-
+Windows users see also "windows-setup.txt".
+Mac users see "osx-setup.txt".
 
 Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
-
-Windows users may see some error messages (that may be ignored) pertaining to directory links.  Directory links are needed only on OSX & Linux.
 
 
 Open a command line terminal, then cd to the install directory.
 
 Windows users type "winslid.bat" to begin puzzling.
+You may also cd ./bin/win/, and then type any individual puzzle name, eg: rush.exe.
 
 Linux users should type "gnuslid.sh" to access any game.
+You may also ce ./bin/gnu/, and then type any individual puzzle name, eg: rush.
 
-Mac users may open a terminal, navigate to the install_directory, and type "macslid.sh" on the command line.
+Mac users may open a terminal, navigate to the install directory, and type "macslid.sh" on the command line.  Alternatively, Mac users may initiate the game in the usual way by navigating to the installation directory in Finder and clicking the "rufaslider.app" icon named "rufaslider".
 
+In many puzzles, a mouse drag can initiate a block move.  However, the preferred method to move a block is to select it using a mouse click, then use the arrow keys  (up),(dn),(lf),(rt).  The block selection is not necessary when only one block can move in the indicated direction.
 
-To move a block, use the arrow keys  (up),(dn),(lf),(rt);  If there is an ambiguity and the "automatic" selection mechanism chooses the wrong block to be moved, simply click on the desired block with the cursor before hitting a directional arrow.  At any time, hit the letter (r) to reset/restart, or (esc) to quit.  
+At any time, hit the letter (r) to reset/restart, or (esc) to quit.  
 
 For Rush, Bslider and DirtyDozen, you use the (n) key to go to the next puzzle, which in general is more difficult.  The (p) key takes you to the previous puzzle.
 
-And for those times when a solution seems impossible, the more difficult puzzle families have an AutoSolver function using the (=)-key to step closer towards the solution:  rush, bslider, dirty12, maboy, and linkRings 
+And for those times when a solution seems impossible, the more difficult puzzle families have an AutoSolver function using the (=)-key to step closer towards the solution:  rush, bslider, dirty12, maboy, and linkRings.  Remember that you can stop using the autosolver at any time and try to manually solve the puzzle.
+
+Note that there are two "external" solvers available:  1) fbfsr for traffic rush puzzles (writes to rpath.txt);  2) fbfsl (writes to lpath.txt) for a) MaBoy; b) dirtyDozen; c) bslider puzzles.  Simply type the executable name followed by the puzzle file name.  For example to solve the second DirtyDozen puzzle type "fbfsl ../../puzzles/dd02.blk".  The solution is written to a file in the current directory, in this case, named lpath.txt.  Then, to follow the output instructions, start the puzzle and reveal the letters by hitting the (a)-key.
 
 Please send questions, comments or corrections to
 
@@ -177,13 +179,12 @@ Focusing on portability and open source freedom, this project relies on SDL2, a 
 
 
 
-
 ## Legal Mumbo Jumbo:
 
 RufasSlider itself is covered by the GNU GPL v3 as indicated in the sources:
 
 
- Copyright (C) 2017  <fastrgv@gmail.com>
+ Copyright (C) 2019  <fastrgv@gmail.com>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -231,6 +232,22 @@ https://github.com/fastrgv?tab=repositories
 
 ## Older Revision History
 
+**ver 2.8.8 -- 29dec18**
+
+* Updated to SDL2 v2.0.8 (all 3 platforms);
+* Deliver 7z archives;
+
+
+
+**ver 2.8.7 -- 02sep18**
+
+* Found & fixed problems with C++ auto solvers.
+* Upgraded the C++ solvers to use improved splaytree code, and to use simpler and/or more robust search keys, including GMG and LinkRings.
+* Now using SDL v207 uniformly in codes for all platforms.
+* Removed Ada solvers;
+
+
+
 **ver 2.8.6 -- 12aug18**
 
 * Enhanced linux portability by adding shared libs to distribution;
@@ -239,12 +256,15 @@ https://github.com/fastrgv?tab=repositories
 * Fixed auto solvers for dirty12 & maboy.
 * Replaced autosolver for TrafficRush due to failure on Windows.
 
+
+
 **ver 2.8.5 -- 02apr18**
 
-* Corrected win-test & hooked up autosolver: GetMyGoat [gmg];
+* Corrected winner-test;  created autosolver for GetMyGoat [gmg];
 * Updated to lodepng 2018 [Lode Vandevenne];
 * Improved & simplified OSX build system;
 * Uninverted font file;
+
 
 
 **ver 2.8.4 -- 24nov17**
@@ -255,9 +275,11 @@ https://github.com/fastrgv?tab=repositories
 * upgraded to SDL v2.0.7 to solve a window focus problem.
 
 
+
 **ver 2.8.3 -- 21nov17**
 
 * Improved selection app to loop through puzzles rather than to use scripts to do that function.  Now the Mac Bundle execution does not terminate after a single puzzle.
+
 
 
 **ver 2.8.2 -- 19nov17**
@@ -394,4 +416,3 @@ https://github.com/fastrgv?tab=repositories
 **v 2.0 - 28mar15**
 
 * deleted unlinkRings;  instead simply type "linkRings i".  In fact any command line parameter will now initiate the inverse puzzle.
-
