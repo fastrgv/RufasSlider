@@ -12,6 +12,12 @@ https://github.com/fastrgv/RufasSlider/releases/download/v2.9.2/rs25aug19.7z
 
 ## What's new:
 
+26nov2019...URGENT NOTICE TO LINUX USERS:
+Due to a library incompatability, you MUST delete all
+libm* files from the directory ~/libs/gnu/ before this
+puzzle game will run properly. Sorry for the inconvenience.
+The next release will correct this problem.
+
 
 **ver 2.9.2 -- 25aug19**
 
