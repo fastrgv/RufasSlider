@@ -12,6 +12,11 @@ https://github.com/fastrgv/RufasSlider/releases/download/v2.9.3/rs27nov19.7z
 
 ## What's new:
 
+**ver 3.0.0 -- 22jan20**
+
+* Put codes into ./src/.
+* Quantum improvement in Linux portability by removing sfml (linux only).
+
 **ver 2.9.3 -- 27nov19**
 
 * Removed bad files from the GNU/Linux library that prevented execution.
