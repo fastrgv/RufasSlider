@@ -12,6 +12,12 @@ https://github.com/fastrgv/RufasSlider/releases/download/v3.0.0/rs21jan20.7z
 
 ## What's new:
 
+**ver 3.1.0 -- 23jan20**
+
+* Fixed linux failure on RedHat. Now tested to run on at least RedHat & Debian (mint).
+* OSX & Windows still using SFML libs.
+
+
 **ver 3.0.0 -- 22jan20**
 
 * Put codes into ./src/.
