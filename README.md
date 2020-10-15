@@ -12,40 +12,20 @@ https://github.com/fastrgv/RufasSlider/releases/download/v3.1.0/rs23jan20.7z
 
 ## What's new:
 
-**ver 3.1.0 -- 23jan20**
 
-* Fixed linux failure on RedHat. Now tested to run on at least RedHat & Debian (mint).
+**ver 3.1.1 -- 16oct20**
+* Made further improvements in linux sound coding.
+* Improved sound effects; now all stereo, and not too loud.
+* Improved textural handling.
+
+**ver 3.1.0 -- 23jan20**
+* Fixed linux failure on RedHat using new sound system. Now runs on RedHat-S.L.7.8, Debian-Mint, & OpenSuse.
 * OSX & Windows still using SFML libs.
 
-
 **ver 3.0.0 -- 22jan20**
-
 * Put codes into ./src/.
 * Quantum improvement in Linux portability by removing sfml (linux only).
 
-**ver 2.9.3 -- 27nov19**
-
-* Removed bad files from the GNU/Linux library that prevented execution.
-
-**ver 2.9.2 -- 25aug19**
-
-* Updated to SDL2 v209;
-* Solvers now ignore "="-key AFTER win (as they should);
-* Added debug output of object selection to terminal window;
-* Object selections can, in most cases, now be made using either left or right mouse button;
-* Fixed error in using p-key/n-key (Previous/Next) in dirty12;
-
-
-**ver 2.9.1 -- 7mar19**
-
-* Generalized EXEs to allow calling from "home" directory, as well as the directory that contains them.
-
-
-**ver 2.9.0 -- 7jan19**
-
-* Repaired block selection errors;
-* Added mouse drag as initiator of block moves;
-* Improved "rush" exit animation;
 
 See full revision history at end of this file
 
@@ -53,7 +33,7 @@ See full revision history at end of this file
 ------------------------------------------------------------------
 ## RufasSlider Introduction
 
-RufaSlider is a collection of 16 different block slider puzzles for kids and casual puzzlers that works on laptops and PCs running Windows, OSX or GNU/Linux.
+RufaSlider is a collection of 16 different block slider puzzles for kids and casual puzzlers that works on laptops and PCs running Windows, OSX or most Linux distros.
 
 It includes a Klotski-style family, a DirtyDozen family, and a Traffic-Rush family.  And now these puzzle families come with AutoSolvers to help you.
 
@@ -61,7 +41,7 @@ The Klotski family uses rectangles of 4 sizes: 1x1, 2x2, 1x2, 2x1. The objective
 
 The DirtyDozen family is similar except there are L-shaped puzzle pieces.
 
-The Traffic-Rush family uses data, with 2x1, 1x2, 3x1, 1x3 rectangles. Here, the long rectangles represent cars or trucks that can only move [roll] lengthwise...the goal being to move the red car toward the shaded "exit door".
+The Traffic-Rush family uses cars or trucks that can only move [roll] lengthwise...the goal being to move the red car toward the shaded "exit door".
 
 Note that a game description files are simple text files that allows users to define additional puzzles.
 
@@ -80,7 +60,8 @@ Finally, there are autosolvers embedded into the TrafficRush, Klotski, DirtyDoze
 * Windows, GNU/Linux and OSX binaries provided, as well as full source.
 * Laptop friendly controls;  supports Mac Retina displays.
 * Uses SDL2;
-* Uses SFML for applause sound;
+* Uses SFML-audio for sound on Windows & OSX.
+* Uses a nonblocking fork to "aplay" for transient sounds on Linux.
 * all runtime files are in ./data/
 * all game data files are in ./puzzles/
 
@@ -146,7 +127,7 @@ script for OSX that references [delivered] local copies of all nonstandard libra
 ------------------------------------------------------
 **GNU/Linux** => gnuAll.sh:
 
-utilizes semi-standard shared libraries that are delivered in this bundle under ./gnulibs/, along with the non-standard static libraries SDL2.  This was used to build the executable, which should run in the presence of ./gnulibs/, whether or not your system already has those libraries.  The runtime loader will prefer system libraries if they are present.
+utilizes shared libraries that are delivered in this bundle under ./libs/gnu/.  These were used to build the executable, which should run in the presence of ./libs/gnu/, whether or not your system already has those libraries.  The runtime loader will prefer system libraries if they are present.
 
 If the delivered linux binary does not run, rebuild all using gnuAll.sh.  In case of problems, try installing gnat from Ada Libre because the g++ compiler that comes with it works fine.
 
@@ -198,7 +179,7 @@ Focusing on portability and open source freedom, this project relies on SDL2, a 
 RufasSlider itself is covered by the GNU GPL v3 as indicated in the sources:
 
 
- Copyright (C) 2019  <fastrgv@gmail.com>
+ Copyright (C) 2020  <fastrgv@gmail.com>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -246,187 +227,21 @@ https://github.com/fastrgv?tab=repositories
 
 ## Older Revision History
 
-**ver 2.8.8 -- 29dec18**
+**ver 2.9.3 -- 27nov19**
+* Removed bad library files from GNU/Linux build that prevented execution.
+
+**ver 2.9.2 -- 25aug19**
+* Updated to SDL2 v209;
+* Solvers now ignore "="-key AFTER win (as they should);
+* Added debug output of object selection to terminal window;
+* Object selections can, in most cases, now be made using either left or right mouse button;
+* Fixed error in using p-key/n-key (Previous/Next) in dirty12;
+
+**ver 2.9.1 -- 7mar19**
+* Generalized EXEs to allow calling from "home" directory, as well as the directory that contains them.
+
+**ver 2.9.0 -- 7jan19**
+* Repaired block selection errors;
+* Added mouse drag as initiator of block moves;
+* Improved "rush" exit animation;
 
-* Updated to SDL2 v2.0.8 (all 3 platforms);
-* Deliver 7z archives;
-
-
-
-**ver 2.8.7 -- 02sep18**
-
-* Found & fixed problems with C++ auto solvers.
-* Upgraded the C++ solvers to use improved splaytree code, and to use simpler and/or more robust search keys, including GMG and LinkRings.
-* Now using SDL v207 uniformly in codes for all platforms.
-* Removed Ada solvers;
-
-
-
-**ver 2.8.6 -- 12aug18**
-
-* Enhanced linux portability by adding shared libs to distribution;
-* Updated to SFML v2.5.0 & compile scripts to match;
-* Fixed unreadable or misplaced text in linkRings, flat7, suits;
-* Fixed auto solvers for dirty12 & maboy.
-* Replaced autosolver for TrafficRush due to failure on Windows.
-
-
-
-**ver 2.8.5 -- 02apr18**
-
-* Corrected winner-test;  created autosolver for GetMyGoat [gmg];
-* Updated to lodepng 2018 [Lode Vandevenne];
-* Improved & simplified OSX build system;
-* Uninverted font file;
-
-
-
-**ver 2.8.4 -- 24nov17**
-
-* simplified Windows setup.
-* improved key & mouse action.
-* now windows recenter when changing size ( b-key or s-key ).
-* upgraded to SDL v2.0.7 to solve a window focus problem.
-
-
-
-**ver 2.8.3 -- 21nov17**
-
-* Improved selection app to loop through puzzles rather than to use scripts to do that function.  Now the Mac Bundle execution does not terminate after a single puzzle.
-
-
-
-**ver 2.8.2 -- 19nov17**
-
-* modified Windows game system to hide executables, DLLs;
-* improved build scripts;
-* now properly handle paths with embedded spaces;
-
-
-**ver 2.8.1 -- 12nov17**
-
-* added scripting that restores the convenience of returning to the selection window without incurring escalating memory use.
-
-
-**ver 2.8.0 -- 8nov17**
-
-* added prebuilt executables for msWindows;
-* added working build scripts for msWindows;
-* linux binaries now put into ./bin/gnu/;
-* refined initial sizing to fit laptop screens;
-* improved code;  avoided memory leaks of prior releases;
-
-
-**ver 2.7.8 -- 21oct17**
-
-* Updated linux scripts to use a) SFML v2.4.2;  b) AdaCore 2017;
-* Note that AdaCore 2017 works on OSX with no changes;
-* Added startup messages listing OGL profile & version;
-* Corrected relative paths to begin with ./ in scripts;
-* Cleaned up various codes and libraries;
-
-
-**v 2.7.7 - 17may17**
-
-* Improved build scripts to enhance portability across different linux distributions.
-* Executable names simplified now that OSX has its own directory.
-* Enhanced functionality of flat7, flatAZ.
-* Better help screens.
-* Added missing gnu libs necessary to run on some linux hosts.
-
-
-**v 2.7.6 - 30apr17**
-
-* An entirely new app structure now allows playing multiple different puzzles without restarting, making it much easier to use.
-
-
-**v 2.7.5 - 27apr17**
-
-* Embedded AutoSolvers into rush, bslider, dirty12, maboy, and linkRings apps.  Simply press the "=" key to single step closer to the solution, regardless of current game state.  You can use the autosolvers to demonstrate how a complete solution is possible, or merely to give you a head start at getting out of a jam.  Thusly, many of these puzzles have become much friendlier for the casual puzzler.
-* Improved messaging in linkRings puzzle.
-
-
-**v 2.7.4 - 4jan17**
-
-* Updated to use new SFML libs.
-* Improved sound code.
-* Corrected a duplicate window glitch.
-* Refined compiler scripts.
-
-
-**v 2.7.3 - 30dec16**
-
-* Updated linux compile scripts to use the gnat g++ compiler in case the gnu g++ compiler is absent.
-* Added numerical block selector on the nine puzzle (nine.cc).
-* Added option to show block letters in rush & bslider that match autosolver output solutions.
-* Added 10 more traffic rush puzzles.
-* Improved coding to elliminate hard constants and to support Intel Skylake embedded graphics.
-* Improved linux build system to maximize distro-compatibility.
-
-
-**v 2.7.2 - 14jul16**
-
-* Added randomizer to flatAZ, flat7 so each run is different.
-* Found and corrected a logic error in most slider games by defining and using a "same" function to determine nearness of two positions.
-
-
-**v 2.7.1 - 12apr16**
-
-* Revised linux compilation to use static versions of SDL2, SFML for enhanced portability.  Also added local library softlinks necessary for execution on some distros.
-* Mac OSX compilation uses static versions for all non-standard libraries.
-
-
-**v 2.7 - 20feb16**
-
-* added 11 more traffic-rush puzzles of my own design, for a total of 76.
-* upgraded and simplified the architecture.  There is now only one executable.
-* added a Mac binary bundle that acts much more like a typical Mac App.  This app is delivered in the installation directory, but could be moved elsewhere, such as your personal Applications directory.  Note that there are some soft [symbolic] links in the bundle that are resolved automatically when copied by the command "cp -r rufaslider.app destination-directory".
-* added another puzzle solver, bfsl, that handles "MaBoy", "DirtyDozen", and any other block slider with L-shaped pieces.  So, now there are 3 solvers:  
-	* bfs:  rectangular block solver.
-	* bfsr: rush solver.
-	* bfsl: L-shaped block solver.
-
-
-**v 2.6 - 12feb16**
-
-* added many traffic-rush puzzles.  Some are vertically oriented;  others are my own design using an experimental auto-generator.
-* fixed some coding errors;  added guard, warning statements.
-* generalized rush, bfsr to support vertically oriented puzzles.
-* generalized and improved bfs, the bslider autosolver.
-* upgraded filename sort within rush to be fully lexicographical.  The intent is to list the most difficult puzzles last.
-* added minimum number of moves to rush objective statements.
-* added DirtyDozen slider puzzles...12 increasingly difficult L-block sliders.
-* and two autosolvers:
-	* **bfs**:  only solves bslider
-	* **bfsr**:  only solves rush.
-* Note that the included autosolvers only work for "bslider" or "rush".  Solutions or hints for other puzzles might be found on Google, or at <http://www.jaapsch.net/puzzles/>.
-
-
-**v 2.5 - 31jan16**
-
-* added nine and hio4, a variation of hole-in-one, both Grabarchuk sliders.
-* added my flat7 and flatAz sliders.
-
-
-**v 2.4 - 30jan16**
-
-* added "suits" slider puzzle (Grabarchuk) whose objective is to move all four suits one step clockwise.  (hint: same trick as panama).
-* now, a single executable provides an entry point for all the puzzles.  This allows the user to point and click to start the puzzle of interest.  Use "rufas_osx" on Mac/OSX, or "rufas_gnu" on Gnu/Linux.
-
-**v 2.2 - 23aug15**
-
-* improved bfs.cc (the automatic Breadth-First-Search block solver for slider) that writes the solution to a file named "path.txt".
- * created bfsr.cc solver for traffic rush puzzles that works similarly but writes the solution to a file named "rushpath.txt".
-* Be aware that in the "slider" and "rush" executables, the block numbering is toggled using the (x) key to make it easy to follow the solution steps produced by the two solvers.
-* improved responsiveness by reducing dlay from 0.3 to 0.1.
-
-**v 2.1 - 1apr15**
-
-* modified the call to SDL_Init so only required systems are initialized;
-* improved the linux compile script and added comments to help it work properly;
-* added full descriptions of minor edits that might be needed by an end user;
-
-
-**v 2.0 - 28mar15**
-
-* deleted unlinkRings;  instead simply type "linkRings i".  In fact any command line parameter will now initiate the inverse puzzle.
