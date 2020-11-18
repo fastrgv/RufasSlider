@@ -3,7 +3,7 @@
 
 Click on the large tar.gz file under releases to download all source & binaries (both Mac & Linux), or use this link:
 
-https://github.com/fastrgv/RufasSlider/releases/download/v3.1.1/rs16oct20.7z
+https://github.com/fastrgv/RufasSlider/releases/download/v3.2.0/rs19nov20.7z
 
 
 
@@ -64,7 +64,7 @@ Finally, there are autosolvers embedded into the TrafficRush, Klotski, DirtyDoze
 * Windows, GNU/Linux and OSX binaries provided, as well as full source.
 * Laptop friendly controls;  supports Mac Retina displays.
 * Uses SDL2;
-* Uses SFML-audio for sound on Windows & OSX.
+* Uses OpenAL-audio for sound.
 * Uses a nonblocking fork to "aplay" for transient sounds on Linux.
 * all runtime files are in ./data/
 * all game data files are in ./puzzles/
@@ -173,7 +173,7 @@ At this point, the delivered compile script is likely to work without mods.
 ## what is special about this project?
 Uses the C++ programming language and fully modern OpenGL methods, with textures, shaders and uniforms.  Achieves version 3.3 core profile contexts.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
 
-Focusing on portability and open source freedom, this project relies on SDL2, a PNG-loader by Lode Vandevenne, and SFML-Audio (because of its elegant audio interface).
+Focusing on portability and open source freedom, this project relies on SDL2, a PNG-loader by Lode Vandevenne, and OpenAL-Audio.
 
 
 
