@@ -12,6 +12,10 @@ https://github.com/fastrgv/RufasSlider/releases/download/v3.1.1/rs16oct20.7z
 
 ## What's new:
 
+**ver 3.2.0 -- 19nov20**
+* All new sound system using Pthreads and OpenAL.
+* Completely elliminated SFML-audio (Windows & OSX).
+* Updated SDL2 to v2.0.12
 
 **ver 3.1.1 -- 16oct20**
 * Made further improvements in linux sound coding.
