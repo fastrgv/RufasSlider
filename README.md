@@ -55,7 +55,7 @@ To move a block, use the arrow keys. If the automatic block selector chooses the
 
 Rush & maboy now allow mouse drags to initiate the moves.
 
-Finally, there are autosolvers embedded into the TrafficRush, Klotski, DirtyDozen, LinkRings and Maboy games to be used interactively, using the (=)-key.  This provides an amazing tool to learn to solve seemingly hopeless problems.
+Finally, there are autosolvers embedded into the TrafficRush, Klotski, DirtyDozen, LinkRings, Maboy and GetMyGoat games to be used interactively, using the (=)-key.  This provides an amazing tool to learn to solve seemingly hopeless problems.
 
 --------------------------------------
 ## Features
@@ -68,6 +68,8 @@ Finally, there are autosolvers embedded into the TrafficRush, Klotski, DirtyDoze
 * Uses a nonblocking fork to "aplay" for transient sounds on Linux.
 * all runtime files are in ./data/
 * all game data files are in ./puzzles/
+* many games have an embedded autosolve function using the (=)-key.
+
 
 ----------------------------------------------
 
