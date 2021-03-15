@@ -79,7 +79,8 @@ Finally, there are autosolvers embedded into the TrafficRush, Klotski, DirtyDoze
 Windows users see also "windows-setup.txt".
 Mac users see "osx-setup.txt".
 
-Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
+Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this. The proper command to extract the archive and maintain the directory structure is "7z x filename".
+
 
 
 Open a command line terminal, then cd to the install directory.
