@@ -91,6 +91,12 @@ You may also cd ./bin/win/, and then type any individual puzzle name, eg: rush.e
 Linux users should type "gnuslid.sh" to access any game.
 You may also ce ./bin/gnu/, and then type any individual puzzle name, eg: rush.
 
+The distributed linux executables require glibc v2.14 or newer.  That means if your distribution is older, it might not run, and you will need to recompile. Or, if you have wine you can run the windows EXE thusly:
+
+	* cd bin/w32/
+	* wine rufaslid.exe
+
+
 Mac users may open a terminal, navigate to the install directory, and type "macslid.sh" on the command line.  Alternatively, Mac users may initiate the game in the usual way by navigating to the installation directory in Finder and clicking the "rufaslider.app" icon named "rufaslider".
 
 In many puzzles, a mouse drag can initiate a block move.  However, the preferred method to move a block is to select it using a mouse click, then use the arrow keys  (up),(dn),(lf),(rt).  The block selection is not necessary when only one block can move in the indicated direction.
