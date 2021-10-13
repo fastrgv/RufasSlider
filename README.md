@@ -18,6 +18,7 @@ Type "7z x filename.7z" to extract the archive.
 
 **ver 3.2.0 -- 19nov20**
 * All new sound system using Pthreads and OpenAL.
+* Threads all created as "joinable".
 * Completely elliminated SFML-audio (Windows & OSX).
 * Updated SDL2 to v2.0.12
 
