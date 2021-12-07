@@ -223,7 +223,7 @@ RufasSlider itself is covered by the GNU GPL v3 as indicated in the sources:
 The particular choice of sound file delivered is not essential to the function of the game and is easily replaced.  This software is primarily intended as a tutorial example of modern OpenGL methods.  The only requirements are that sounds be in WAV format.
 
 ### SoundFile (small-applause.wav)
-...are from freesound.org and is covered by the Creative Commons Attribution noncommercial license documented in the accompanying file creativeCommons.txt.   See "small-applause.txt" for details and URL.
+...are from freesound.org and is covered by the Creative Commons CC0 license.
 
 
 ### ImageFiles (x.png)
