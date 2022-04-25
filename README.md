@@ -16,6 +16,16 @@ Type "7z x filename.7z" to extract the archive.
 
 ## What's new:
 
+**ver 3.2.2 -- 25apr22**
+* Refined libs, scripts.
+* Removed unused SFML libs.
+* Updated lodepng.
+* Added a 64-bit Windows build.
+
+**ver 3.2.1 -- 22nov20**
+* Improved sound code for robustness;
+* Threads now created as "joinable".
+
 **ver 3.2.0 -- 19nov20**
 * All new sound system using Pthreads and OpenAL.
 * Threads all created as "joinable".
