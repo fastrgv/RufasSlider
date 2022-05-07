@@ -78,15 +78,19 @@ Finally, there are autosolvers embedded into the TrafficRush, Klotski, DirtyDoze
 --------------------------------------
 ## Features
 
-* Works on PCs or laptops running Windows, OSX or GNU/Linux.  And if GNAT is installed you can build it yourself!  But first try the delivered, prebuilt binaries.
+* Works on PCs or laptops running Windows, OSX(>=10.13) or GNU/Linux.  And if GNAT is installed you can build it yourself!  But first try the delivered, prebuilt binaries.
 * Windows, GNU/Linux and OSX binaries provided, as well as full source.
-* Laptop friendly controls;  supports Mac Retina displays.
+* Laptop friendly controls; can support Mac Retina displays.
 * Uses SDL2;
 * Uses OpenAL-audio for sound.
-* Uses a nonblocking fork to "aplay" for transient sounds on Linux.
 * all runtime files are in ./data/
 * all game data files are in ./puzzles/
-* many games have an embedded autosolve function using the (=)-key.
+
+* no installation
+* no dependencies
+* simply unzip in your Downloads directory, and run;
+* or unzip onto a USB flash drive [w/same file format] and run.
+
 
 
 ----------------------------------------------
