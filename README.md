@@ -16,6 +16,10 @@ Type "7z x filename.7z" to extract the archive.
 
 ## What's new:
 
+**ver 3.2.4 -- 16sep22**
+* Now using GNU g++ rather than defunct AdaCore compiler.
+
+
 **ver 3.2.2 -- 25apr22**
 * Refined libs, scripts.
 * Removed unused SFML libs.
