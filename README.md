@@ -16,47 +16,21 @@ Type "7z x filename.7z" to extract the archive.
 
 ## What's new:
 
+
+**ver 3.3.0 -- 01oct22**
+
+* Now using simpler-to-setup GNU g++ for Win64.
+
+
 **ver 3.2.4 -- 16sep22**
+
 * Now using GNU g++ rather than defunct AdaCore compiler.
-
-
-**ver 3.2.2 -- 25apr22**
-* Refined libs, scripts.
-* Removed unused SFML libs.
-* Updated lodepng.
-* Added a 64-bit Windows build.
-
-**ver 3.2.1 -- 22nov20**
-* Improved sound code for robustness;
-* Threads now created as "joinable".
-
-**ver 3.2.0 -- 19nov20**
-* All new sound system using Pthreads and OpenAL.
-* Threads all created as "joinable".
-* Completely elliminated SFML-audio (Windows & OSX).
-* Updated SDL2 to v2.0.12
-
-**ver 3.1.1 -- 16oct20**
-* Made further improvements in linux sound coding.
-* Improved sound effects; now all stereo, and not too loud.
-* Improved textural handling.
-
-**ver 3.1.0 -- 23jan20**
-* Fixed linux failure on RedHat using new sound system. Now runs on RedHat-S.L.7.8, Debian-Mint, & OpenSuse.
-* OSX & Windows still using SFML libs.
-
-**ver 3.0.0 -- 22jan20**
-* Put codes into ./src/.
-* Quantum improvement in Linux portability by removing sfml (linux only).
 
 
 See full revision history at end of this file
 
 
 ------------------------------------------------------------------
-
-
-
 ## RufasSlider Introduction
 
 RufaSlider is a collection of 16 different block slider puzzles for kids and casual puzzlers that works on laptops and PCs running Windows, OSX or most Linux distros.
@@ -75,9 +49,9 @@ Several other classic block slider games are included:  Fifteen, Eight, Nine, Pa
 
 To move a block, use the arrow keys. If the automatic block selector chooses the wrong block, simply click the cursor on the desired block before using the arrow key. Thusly, the games are laptop friendly.
 
-Rush & maboy now allow mouse drags to initiate the moves.
+Rush & maboy allow mouse drags to initiate the moves.
 
-Finally, there are autosolvers embedded into the TrafficRush, Klotski, DirtyDozen, LinkRings, Maboy and GetMyGoat games to be used interactively, using the (=)-key.  This provides an amazing tool to learn to solve seemingly hopeless problems.
+Finally, there are autosolvers embedded into the TrafficRush, Klotski, DirtyDozen, LinkRings and Maboy games to be used interactively, using the (=)-key.  This provides an amazing tool to learn to solve seemingly hopeless problems.
 
 --------------------------------------
 ## Features
@@ -95,8 +69,6 @@ Finally, there are autosolvers embedded into the TrafficRush, Klotski, DirtyDoze
 * simply unzip in your Downloads directory, and run;
 * or unzip onto a USB flash drive [w/same file format] and run.
 
-
-
 ----------------------------------------------
 
 
@@ -105,24 +77,24 @@ Finally, there are autosolvers embedded into the TrafficRush, Klotski, DirtyDoze
 Windows users see also "windows-setup.txt".
 Mac users see "osx-setup.txt".
 
-Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this. The proper command to extract the archive and maintain the directory structure is "7z x filename".
-
-
-
+Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
 Open a command line terminal, then cd to the install directory.
 
+----------------------------------------------------------------
 Windows users type "winslid.bat" to begin puzzling.
-You may also cd ./bin/win/, and then type any individual puzzle name, eg: rush.exe.
+You may also cd ./bin/w64/, and then type any individual puzzle name, eg: rush.exe.
 
+----------------------------------------------------------------
 Linux users should type "gnuslid.sh" to access any game.
 You may also ce ./bin/gnu/, and then type any individual puzzle name, eg: rush.
 
-The distributed linux executables require glibc v2.14 or newer.  That means if your distribution is older, it might not run, and you will need to recompile. Or, if you have wine you can run the windows EXE thusly:
+Also, if you have wine installed on your linux system, you can run the windows EXE thusly:
 
-	* cd bin/w32/
+	* cd bin/w64/
 	* wine rufaslid.exe
 
 
+----------------------------------------------------------------
 Mac users may open a terminal, navigate to the install directory, and type "macslid.sh" on the command line.  Alternatively, Mac users may initiate the game in the usual way by navigating to the installation directory in Finder and clicking the "rufaslider.app" icon named "rufaslider".
 
 In many puzzles, a mouse drag can initiate a block move.  However, the preferred method to move a block is to select it using a mouse click, then use the arrow keys  (up),(dn),(lf),(rt).  The block selection is not necessary when only one block can move in the indicated direction.
@@ -135,7 +107,7 @@ And for those times when a solution seems impossible, the more difficult puzzle 
 
 Note that there are two "external" solvers available:  1) fbfsr for traffic rush puzzles (writes to rpath.txt);  2) fbfsl (writes to lpath.txt) for a) MaBoy; b) dirtyDozen; c) bslider puzzles.  Simply type the executable name followed by the puzzle file name.  For example to solve the second DirtyDozen puzzle type "fbfsl ../../puzzles/dd02.blk".  The solution is written to a file in the current directory, in this case, named lpath.txt.  Then, to follow the output instructions, start the puzzle and reveal the letters by hitting the (a)-key.
 
-Please send questions, comments or corrections to
+Please send questions, comments, corrections or improvements to
 
 	fastrgv@gmail.com
 
@@ -144,31 +116,32 @@ Please send questions, comments or corrections to
 
 ## Build Requirements:
 
- * a recent g++ compiler that supports -std=c++11, OR a GNAT-GPL Ada compiler from libre.adacore.com/download/ [that includes a nice g++ compiler]
+ * a recent GNU g++ compiler that supports -std=c++11.
  * graphics card that supports OpenGL version 3.3 or later;
- * Xcode g++ compiler, if using OSX;
 
 -------------------------------------------------------
 
 ## Build Instructions:
 
--------------------------------------------------------
-**Windows** => winAll.bat
+Begin by installing GNU g++.
 
-build script that requires libraries included in ./libs/win/.
+-------------------------------------------------------
+**Windows64** => w64all.bat
+
+Windows developers, please also read "gnuOnWindows.txt".
 
 -------------------------------------------------------
 
 **MacOSX** => osxAll.sh:
 
-script for OSX that references [delivered] local copies of all nonstandard libraries in ./osxlibs/.  The intent is to allow anyone with Xcode and a g++ compiler on their Mac to build without having to install these nonstandard libraries.
+script for OSX that references [delivered] local copies of all nonstandard libraries in ./libs/osx/.  The intent is to allow anyone to build without having to install these nonstandard libraries.
 
 ------------------------------------------------------
 **GNU/Linux** => gnuAll.sh:
 
 utilizes shared libraries that are delivered in this bundle under ./libs/gnu/.  These were used to build the executable, which should run in the presence of ./libs/gnu/, whether or not your system already has those libraries.  The runtime loader will prefer system libraries if they are present.
 
-If the delivered linux binary does not run, rebuild all using gnuAll.sh.  In case of problems, try installing gnat from Ada Libre because the g++ compiler that comes with it works fine.
+If the delivered linux binary does not run, rebuild all using gnuAll.sh.  In case of problems.
 
 
 ### Fixable Link Problems during linux build:
@@ -180,45 +153,29 @@ sudo ln -s libGL.so.1 libGL.so  (and enter the admin password)
 whence the linker should now be able to find what it wants.  But if there is more than one file libGL.so present on your system, make sure you use the best one;  i.e. the one that corresponds to your accelerated graphics.
 
 
-----------------------------------------------
 
-bfscmp.sh:
-is a script that compiles any of the stand-alone solvers:  bfs, bfsr, bfsl, bfsLR on any platform.
-
------------------------------------------------
-
-In the unlikely event that the delivered **linux** binary does not run, AND recompilation fails to create a usable executable, try these...
 
 -------------------------------------------------------
-### Developers:  steps to compile and run on "other" linux distros.
-
-* Install Cmake...complicated to build from source, but easy using a system update.
-
-* Install SDL2-dev.
-	* First, try a system update of libSDL2-devel.
-	* Downloading and building from source is the hardest way, but still easy.  Requires Cmake.
-
-* Install SFML-dev.
-	* First, try a system update of sfml-dev or libsfml-devel.  
-	* Building from source using Cmake is difficult because there are several prerequisites, but if you add them one at a time based on the cmake error messages, it is achievable.
-
-At this point, the delivered compile script is likely to work without mods.
-
 
 ## what is special about this project?
-Uses the C++ programming language and fully modern OpenGL methods, with textures, shaders and uniforms.  Achieves version 3.3 core profile contexts.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
+Uses the C++ programming language and fully modern OpenGL methods, with textures, shaders and uniforms.  Achieves [at least] version 3.3 core profile contexts.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
 
 Focusing on portability and open source freedom, this project relies on SDL2, a PNG-loader by Lode Vandevenne, and OpenAL-Audio.
+
+------------------------------------------------------------
+Open source developers are welcome to help improve or extend this app.
+Developer or not, send comments, suggestions or questions to:
+fastrgv@gmail.com
 
 
 
 
 ## Legal Mumbo Jumbo:
 
-RufasSlider itself is covered by the GNU GPL v3 as indicated in the sources:
+This app is covered by the GNU GPL v3 as indicated in the sources:
 
 
- Copyright (C) 2020  <fastrgv@gmail.com>
+ Copyright (C) 2022  <fastrgv@gmail.com>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -240,8 +197,12 @@ RufasSlider itself is covered by the GNU GPL v3 as indicated in the sources:
 ### General Note
 The particular choice of sound file delivered is not essential to the function of the game and is easily replaced.  This software is primarily intended as a tutorial example of modern OpenGL methods.  The only requirements are that sounds be in WAV format.
 
-### SoundFile (small-applause.wav)
-...are from freesound.org and is covered by the Creative Commons CC0 license.
+It is my intention to use media with copyrights or licenses that are compatible with GPLv3. Please notify me if you believe there is an incompatibility, and it will be removed ASAP, eg a CC-by-NC license is NOT GPL compatible.
+
+
+
+### SoundFiles
+...are either public domain or are from freesound.org and covered by the Creative Commons CC0 license documented in the accompanying file ./docs/creativeCommonsCC0.txt.   See "small-applause.txt" for details and URL.
 
 
 ### ImageFiles (x.png)
@@ -259,12 +220,51 @@ tags:  kids, puzzle, rush-hour, klotski, slider
 
 ----------------------------------------------------------
 
-## Best Download Site for all my games:
+## Download Site for all my games:
 https://github.com/fastrgv?tab=repositories
+https://www.indiedb.com/members/fastrgv/games
+https://fastrgv.itch.io
+https://sourceforge.net/u/fastrgv/profile/
+https://gamejolt.com/@fastrgv/games
 
 ====================================================
 
 ## Older Revision History
+
+**ver 3.2.3 -- 27apr22**
+* Repaired errors in "gmg" and "linkRings".
+* Improved sound code.
+
+
+**ver 3.2.2 -- 25apr22**
+* Refined libs, scripts.
+* Removed unused SFML libs.
+* Updated lodepng.
+* Added a 64-bit Windows build.
+
+**ver 3.2.1 -- 22nov20**
+* Improved sound code for robustness;
+* Threads now created as "joinable".
+
+**ver 3.2.0 -- 19nov20**
+* All new sound system using Pthreads and OpenAL.
+* Completely elliminated SFML-audio.
+* Updated SDL2 to v2.0.12
+
+
+**ver 3.1.1 -- 16oct20**
+* Made further improvements in linux sound coding.
+* Improved sound effects; now all stereo, and not too loud.
+* Improved texture handling.
+
+**ver 3.1.0 -- 23jan20**
+* Fixed linux failure on RedHat using new sound system. Now runs on RedHat-S.L.7.8, Debian-Mint, & OpenSuse.
+* OSX & Windows still using SFML libs.
+
+**ver 3.0.0 -- 22jan20**
+* Put codes into ./src/.
+* Quantum improvement in Linux portability by removing sfml (linux only).
+
 
 **ver 2.9.3 -- 27nov19**
 * Removed bad library files from GNU/Linux build that prevented execution.
@@ -283,4 +283,6 @@ https://github.com/fastrgv?tab=repositories
 * Repaired block selection errors;
 * Added mouse drag as initiator of block moves;
 * Improved "rush" exit animation;
+
+
 
