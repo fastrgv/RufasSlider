@@ -12,19 +12,30 @@ Type "7z x filename.7z" to extract the archive.
 
 
 
+
+
+
 # RufasSlider
 
 ## What's new:
 
 
+**ver 3.3.1 -- 22oct22**
+
+* Corrected direction of traffic-rush red car.
+* Added 2 Quzzle puzzles to the Klotski app.
+* Added the Annoying Sliders app...16 that look small but are not easy.
+
+
 **ver 3.3.0 -- 01oct22**
 
 * Now using simpler-to-setup GNU g++ for Win64.
+* Now make game subwindow grab focus upon opening.
 
 
 **ver 3.2.4 -- 16sep22**
 
-* Now using GNU g++ rather than defunct AdaCore compiler.
+* Now using GNU g++ rather than defunct AdaCore g++ compiler.
 
 
 See full revision history at end of this file
@@ -43,9 +54,15 @@ The DirtyDozen family is similar except there are L-shaped puzzle pieces.
 
 The Traffic-Rush family uses cars or trucks that can only move [roll] lengthwise...the goal being to move the red car toward the shaded "exit door".
 
-Note that a game description files are simple text files that allows users to define additional puzzles.
+The game description files are simple text files that allow users to define additional puzzles.
 
-Several other classic block slider games are included:  Fifteen, Eight, Nine, Panama, MaBoy, GetMyGoat, 2-versions of HoleInOne, Suits, and 2-versions of LinkRings.  
+Several other classic block slider games are included:  Fifteen, Eight, Nine, Panama, MaBoy, GetMyGoat, 2-versions of HoleInOne, Suits, and 2-versions of LinkRings. 
+
+* Also included are two of my own creations: Flat7, FlatAZ. These are 2-dimensional versions of my 3D "Rufas Cubes", available at:  https://sourceforge.net/projects/rufascube/
+
+* Many of these puzzles are also available as retro ASCII puzzles that run in a command-line terminal on Windows, OS-X and Gnu/Linux; and is available at: https://sourceforge.net/projects/coterminalapps/
+
+* These are all 2D slider puzzles. I created four 3D slider puzzles that also run on Windows, OS-X, and Linux, using OpenGL graphics. It is available at: https://sourceforge.net/projects/reliquarium/
 
 To move a block, use the arrow keys. If the automatic block selector chooses the wrong block, simply click the cursor on the desired block before using the arrow key. Thusly, the games are laptop friendly.
 
@@ -101,9 +118,14 @@ In many puzzles, a mouse drag can initiate a block move.  However, the preferred
 
 At any time, hit the letter (r) to reset/restart, or (esc) to quit.  
 
-For Rush, Bslider and DirtyDozen, you use the (n) key to go to the next puzzle, which in general is more difficult.  The (p) key takes you to the previous puzzle.
+For Rush, Bslider, Annoying and DirtyDozen, you use the (n) key to go to the next puzzle, which in general is more difficult.  The (p) key takes you to the previous puzzle.
+
+Note that I created about 20% of the Rush puzzles (filenames that end "my.rush"), including the most difficult one "zzzz_89my.rush".
+
 
 And for those times when a solution seems impossible, the more difficult puzzle families have an AutoSolver function using the (=)-key to step closer towards the solution:  rush, bslider, dirty12, maboy, and linkRings.  Remember that you can stop using the autosolver at any time and try to manually solve the puzzle.
+
+Annoying has no autosolver.
 
 Note that there are two "external" solvers available:  1) fbfsr for traffic rush puzzles (writes to rpath.txt);  2) fbfsl (writes to lpath.txt) for a) MaBoy; b) dirtyDozen; c) bslider puzzles.  Simply type the executable name followed by the puzzle file name.  For example to solve the second DirtyDozen puzzle type "fbfsl ../../puzzles/dd02.blk".  The solution is written to a file in the current directory, in this case, named lpath.txt.  Then, to follow the output instructions, start the puzzle and reveal the letters by hitting the (a)-key.
 
@@ -215,6 +237,8 @@ are files copyrighted by Lode Vandevenne and so marked with all the details of t
 ### Other Credits and Thanks:
 Serhiy Grabarchuk and Peter Grabarchuk for their "Hole in One", "Hole in One plus 4", "Nine", and "Four Suits" puzzles.
 
+Nick Baxter, J.H.Conway, Jim Lewis, Bob Henderson, Gil Dogon, Ed Pegg Jr., J.I. Wiley, J.H. Fleming, C. L. Diamond, Sam Loyd, H. E. Dudeney, E. B. Escott, Nob Yoshigahara, James W. Stephens for the classic sliders.
+
 ----------------------------------------------------------
 tags:  kids, puzzle, rush-hour, klotski, slider
 
@@ -283,6 +307,5 @@ https://gamejolt.com/@fastrgv/games
 * Repaired block selection errors;
 * Added mouse drag as initiator of block moves;
 * Improved "rush" exit animation;
-
 
 
