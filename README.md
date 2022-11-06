@@ -15,16 +15,27 @@ Type "7z x filename.7z" to extract the archive.
 
 
 
+
+
+
 # RufasSlider
 
 ## What's new:
+
+
+**ver 3.3.2 -- 07nov22**
+
+* Improved robustness of auto-solvers.
+* Added "live" embedded solver for annoying sliders puzzles.
+* Added external solver "bfsa" for Annoying sliders that also solves Klotski-class, DirtyDozen, & TrafficRush puzzle files.
+* Revised compilation scripts to hide object files.
 
 
 **ver 3.3.1 -- 22oct22**
 
 * Corrected direction of traffic-rush red car.
 * Added 2 Quzzle puzzles to the Klotski app.
-* Added the Annoying Sliders app...16 that look small but are not easy.
+* Added 16 Annoying Sliders...that look small but are not easy.
 
 
 **ver 3.3.0 -- 01oct22**
@@ -70,6 +81,8 @@ Rush & maboy allow mouse drags to initiate the moves.
 
 Finally, there are autosolvers embedded into the TrafficRush, Klotski, DirtyDozen, LinkRings and Maboy games to be used interactively, using the (=)-key.  This provides an amazing tool to learn to solve seemingly hopeless problems.
 
+FTTB, Annoy has no built-in solver, but the solutions are colocated with the input files under ./puzzles/. EG, for Annoying#16, input: ad16.blk; soln: ad16soln.txt. Note that you should turn on the alphabetic block symbols before trying to use a solution file.
+
 --------------------------------------
 ## Features
 
@@ -114,7 +127,7 @@ Also, if you have wine installed on your linux system, you can run the windows E
 ----------------------------------------------------------------
 Mac users may open a terminal, navigate to the install directory, and type "macslid.sh" on the command line.  Alternatively, Mac users may initiate the game in the usual way by navigating to the installation directory in Finder and clicking the "rufaslider.app" icon named "rufaslider".
 
-In many puzzles, a mouse drag can initiate a block move.  However, the preferred method to move a block is to select it using a mouse click, then use the arrow keys  (up),(dn),(lf),(rt).  The block selection is not necessary when only one block can move in the indicated direction.
+In many puzzles, a mouse drag can initiate a block move.  However, the preferred method to move a block is to select it using a mouse click, then use the arrow keys  (up),(dn),(lf),(rt).  The block selection is not necessary when only one block can move in the indicated direction. EG FourSuits, eight & fifteen never require block selection since there is only 1 empty space.
 
 At any time, hit the letter (r) to reset/restart, or (esc) to quit.  
 
@@ -123,9 +136,7 @@ For Rush, Bslider, Annoying and DirtyDozen, you use the (n) key to go to the nex
 Note that I created about 20% of the Rush puzzles (filenames that end "my.rush"), including the most difficult one "zzzz_89my.rush".
 
 
-And for those times when a solution seems impossible, the more difficult puzzle families have an AutoSolver function using the (=)-key to step closer towards the solution:  rush, bslider, dirty12, maboy, and linkRings.  Remember that you can stop using the autosolver at any time and try to manually solve the puzzle.
-
-Annoying has no autosolver.
+And for those times when a solution seems impossible, the more difficult puzzle families have an AutoSolver function using the (=)-key to step closer towards the solution:  rush, bslider, dirty12, maboy, annoy, and linkRings.  Remember that you can stop using the autosolver at any time and try to manually solve the puzzle from a configuration that is a few steps closer to a solution.
 
 Note that there are two "external" solvers available:  1) fbfsr for traffic rush puzzles (writes to rpath.txt);  2) fbfsl (writes to lpath.txt) for a) MaBoy; b) dirtyDozen; c) bslider puzzles.  Simply type the executable name followed by the puzzle file name.  For example to solve the second DirtyDozen puzzle type "fbfsl ../../puzzles/dd02.blk".  The solution is written to a file in the current directory, in this case, named lpath.txt.  Then, to follow the output instructions, start the puzzle and reveal the letters by hitting the (a)-key.
 
@@ -307,5 +318,7 @@ https://gamejolt.com/@fastrgv/games
 * Repaired block selection errors;
 * Added mouse drag as initiator of block moves;
 * Improved "rush" exit animation;
+
+
 
 
