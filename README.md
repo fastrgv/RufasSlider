@@ -25,6 +25,8 @@ Type "7z x filename.7z" to extract the archive.
 
 **ver 3.3.2 -- 07nov22**
 
+* Added required softlink in ~/libs/gnu/. (9nov update)
+
 * Improved robustness of auto-solvers.
 * Added "live" embedded solver for annoying sliders puzzles.
 * Added external solver "bfsa" for Annoying sliders that also solves Klotski-class, DirtyDozen, & TrafficRush puzzle files.
