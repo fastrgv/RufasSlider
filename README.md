@@ -18,14 +18,22 @@ Type "7z x filename.7z" to extract the archive.
 
 
 
+
+
 # RufasSlider
 
 ## What's new:
 
 
+**ver 3.3.3 -- 05dec22**
+
+* Added solvers for Flat7 & FlatAZ.
+* Abandoned OSX build (because my 2013 macBookPro finally died).
+
+
 **ver 3.3.2 -- 07nov22**
 
-* Added required softlink in ~/libs/gnu/. (9nov update)
+* Added required softlink in ~/libs/gnu/.
 
 * Improved robustness of auto-solvers.
 * Added "live" embedded solver for annoying sliders puzzles.
@@ -57,7 +65,7 @@ See full revision history at end of this file
 ------------------------------------------------------------------
 ## RufasSlider Introduction
 
-RufaSlider is a collection of 16 different block slider puzzles for kids and casual puzzlers that works on laptops and PCs running Windows, OSX or most Linux distros.
+RufaSlider is a collection of 16 different block slider puzzles for kids and casual puzzlers that works on laptops and PCs running Windows or most Linux distros.
 
 It includes a Klotski-style family, a DirtyDozen family, and a Traffic-Rush family.  And now these puzzle families come with AutoSolvers to help you.
 
@@ -81,15 +89,18 @@ To move a block, use the arrow keys. If the automatic block selector chooses the
 
 Rush & maboy allow mouse drags to initiate the moves.
 
-Finally, there are autosolvers embedded into the TrafficRush, Klotski, DirtyDozen, LinkRings and Maboy games to be used interactively, using the (=)-key.  This provides an amazing tool to learn to solve seemingly hopeless problems.
+Finally, there are autosolvers embedded into the TrafficRush, Klotski, DirtyDozen, LinkRings, Maboy Flat7, FlatAZ and Annoy games to be used interactively, using the (=)-key.  This provides an amazing tool to learn to solve seemingly hopeless problems.
 
-FTTB, Annoy has no built-in solver, but the solutions are colocated with the input files under ./puzzles/. EG, for Annoying#16, input: ad16.blk; soln: ad16soln.txt. Note that you should turn on the alphabetic block symbols before trying to use a solution file.
+### AutoSolvers Note
+
+The slowest of the bunch is in FlatAZ, which can take up to 10 seconds to solve a level 5 shuffle. When it is done, it will countdown the remaining steps toward a solution as you continue to press the "="-key
+
 
 --------------------------------------
 ## Features
 
-* Works on PCs or laptops running Windows, OSX(>=10.13) or GNU/Linux.  And if GNAT is installed you can build it yourself!  But first try the delivered, prebuilt binaries.
-* Windows, GNU/Linux and OSX binaries provided, as well as full source.
+* Works on PCs or laptops running Windows or GNU/Linux.  And if GNAT is installed you can build it yourself!  But first try the delivered, prebuilt binaries.
+* Windows & GNU/Linux binaries provided, as well as full source.
 * Laptop friendly controls; can support Mac Retina displays.
 * Uses SDL2;
 * Uses OpenAL-audio for sound.
@@ -107,7 +118,6 @@ FTTB, Annoy has no built-in solver, but the solutions are colocated with the inp
 ## Setup and Running:
 
 Windows users see also "windows-setup.txt".
-Mac users see "osx-setup.txt".
 
 Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
 Open a command line terminal, then cd to the install directory.
@@ -125,9 +135,17 @@ Also, if you have wine installed on your linux system, you can run the windows E
 	* cd bin/w64/
 	* wine rufaslid.exe
 
+----------------------------------------------------------------
+### Advice
+Most of these apps use SDL2, which is pretty extravagent with system memory.
+The selection program "rufaslid" uses lots of system memory.
+You can economize by simply running your favorite puzzle directly 
+from the command line, thusly:
+EG1 (linux) : cd bin/gnu; rush
+EG2 (Windows) : cd bin\w64; rush.exe
+EG3 (wine) : cd bin/w64; wine rush.exe
 
 ----------------------------------------------------------------
-Mac users may open a terminal, navigate to the install directory, and type "macslid.sh" on the command line.  Alternatively, Mac users may initiate the game in the usual way by navigating to the installation directory in Finder and clicking the "rufaslider.app" icon named "rufaslider".
 
 In many puzzles, a mouse drag can initiate a block move.  However, the preferred method to move a block is to select it using a mouse click, then use the arrow keys  (up),(dn),(lf),(rt).  The block selection is not necessary when only one block can move in the indicated direction. EG FourSuits, eight & fifteen never require block selection since there is only 1 empty space.
 
@@ -151,7 +169,7 @@ Please send questions, comments, corrections or improvements to
 
 ## Build Requirements:
 
- * a recent GNU g++ compiler that supports -std=c++11.
+ * a recent GNU g++/Ada compiler that supports -std=c++11.
  * graphics card that supports OpenGL version 3.3 or later;
 
 -------------------------------------------------------
@@ -165,12 +183,6 @@ Begin by installing GNU g++.
 
 Windows developers, please also read "gnuOnWindows.txt".
 
--------------------------------------------------------
-
-**MacOSX** => osxAll.sh:
-
-script for OSX that references [delivered] local copies of all nonstandard libraries in ./libs/osx/.  The intent is to allow anyone to build without having to install these nonstandard libraries.
-
 ------------------------------------------------------
 **GNU/Linux** => gnuAll.sh:
 
@@ -179,23 +191,16 @@ utilizes shared libraries that are delivered in this bundle under ./libs/gnu/.  
 If the delivered linux binary does not run, rebuild all using gnuAll.sh.  In case of problems.
 
 
-### Fixable Link Problems during linux build:
-
-On a linux build machine, you might have minor link errors, depending on its configuration.  If "libGL" cannot be found, this literally means "libGL.so" was absent.  But you might have "libGL.so.1" present.  In this case, simply create a softlink by changing to the libGL directory, then type the line:
-
-sudo ln -s libGL.so.1 libGL.so  (and enter the admin password)
-
-whence the linker should now be able to find what it wants.  But if there is more than one file libGL.so present on your system, make sure you use the best one;  i.e. the one that corresponds to your accelerated graphics.
-
-
-
 
 -------------------------------------------------------
 
 ## what is special about this project?
-Uses the C++ programming language and fully modern OpenGL methods, with textures, shaders and uniforms.  Achieves [at least] version 3.3 core profile contexts.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
+Uses the C++ programming language and fully modern OpenGL methods, with textures, shaders and uniforms.  Achieves [at least] version 3.3 core profile contexts.  Compiles and runs on Windows & GNU/Linux systems.
 
 Focusing on portability and open source freedom, this project relies on SDL2, a PNG-loader by Lode Vandevenne, and OpenAL-Audio.
+
+## future plans
+Elliminate SDL2 in favor of GLFW.
 
 ------------------------------------------------------------
 Open source developers are welcome to help improve or extend this app.
@@ -252,6 +257,7 @@ Serhiy Grabarchuk and Peter Grabarchuk for their "Hole in One", "Hole in One plu
 
 Nick Baxter, J.H.Conway, Jim Lewis, Bob Henderson, Gil Dogon, Ed Pegg Jr., J.I. Wiley, J.H. Fleming, C. L. Diamond, Sam Loyd, H. E. Dudeney, E. B. Escott, Nob Yoshigahara, James W. Stephens for the classic sliders.
 
+
 ----------------------------------------------------------
 tags:  kids, puzzle, rush-hour, klotski, slider
 
@@ -294,32 +300,6 @@ https://gamejolt.com/@fastrgv/games
 * Improved sound effects; now all stereo, and not too loud.
 * Improved texture handling.
 
-**ver 3.1.0 -- 23jan20**
-* Fixed linux failure on RedHat using new sound system. Now runs on RedHat-S.L.7.8, Debian-Mint, & OpenSuse.
-* OSX & Windows still using SFML libs.
-
-**ver 3.0.0 -- 22jan20**
-* Put codes into ./src/.
-* Quantum improvement in Linux portability by removing sfml (linux only).
-
-
-**ver 2.9.3 -- 27nov19**
-* Removed bad library files from GNU/Linux build that prevented execution.
-
-**ver 2.9.2 -- 25aug19**
-* Updated to SDL2 v209;
-* Solvers now ignore "="-key AFTER win (as they should);
-* Added debug output of object selection to terminal window;
-* Object selections can, in most cases, now be made using either left or right mouse button;
-* Fixed error in using p-key/n-key (Previous/Next) in dirty12;
-
-**ver 2.9.1 -- 7mar19**
-* Generalized EXEs to allow calling from "home" directory, as well as the directory that contains them.
-
-**ver 2.9.0 -- 7jan19**
-* Repaired block selection errors;
-* Added mouse drag as initiator of block moves;
-* Improved "rush" exit animation;
 
 
 
