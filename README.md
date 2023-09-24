@@ -20,43 +20,18 @@ Type "7z x filename.7z" to extract the archive.
 
 
 
+
 # RufasSlider
 
 ## What's new:
 
 
-**ver 3.3.3 -- 05dec22**
+**ver 3.3.4 -- 25sep23**
 
-* Added solvers for Flat7 & FlatAZ.
-* Abandoned OSX build (because my 2013 macBookPro finally died).
-
-
-**ver 3.3.2 -- 07nov22**
-
-* Added required softlink in ~/libs/gnu/.
-
-* Improved robustness of auto-solvers.
-* Added "live" embedded solver for annoying sliders puzzles.
-* Added external solver "bfsa" for Annoying sliders that also solves Klotski-class, DirtyDozen, & TrafficRush puzzle files.
-* Revised compilation scripts to hide object files.
-
-
-**ver 3.3.1 -- 22oct22**
-
-* Corrected direction of traffic-rush red car.
-* Added 2 Quzzle puzzles to the Klotski app.
-* Added 16 Annoying Sliders...that look small but are not easy.
-
-
-**ver 3.3.0 -- 01oct22**
-
-* Now using simpler-to-setup GNU g++ for Win64.
-* Now make game subwindow grab focus upon opening.
-
-
-**ver 3.2.4 -- 16sep22**
-
-* Now using GNU g++ rather than defunct AdaCore g++ compiler.
+* Updated the linux build process to enhance portability.
+* Reduced annoying key-delay in Flat7.
+* Traffic Rush has a new sound.
+* Added 5 more Annoying Sliders that are seriously difficult.
 
 
 See full revision history at end of this file
@@ -81,9 +56,9 @@ Several other classic block slider games are included:  Fifteen, Eight, Nine, Pa
 
 * Also included are two of my own creations: Flat7, FlatAZ. These are 2-dimensional versions of my 3D "Rufas Cubes", available at:  https://sourceforge.net/projects/rufascube/
 
-* Many of these puzzles are also available as retro ASCII puzzles that run in a command-line terminal on Windows, OS-X and Gnu/Linux; and is available at: https://sourceforge.net/projects/coterminalapps/
+* Many of these puzzles are also available as retro ASCII puzzles that run in a command-line terminal on Windows, and Gnu/Linux; and is available at: https://sourceforge.net/projects/coterminalapps/
 
-* These are all 2D slider puzzles. I created four 3D slider puzzles that also run on Windows, OS-X, and Linux, using OpenGL graphics. It is available at: https://sourceforge.net/projects/reliquarium/
+* These are all 2D slider puzzles. I created four 3D slider puzzles that also run on Windows, and Linux, using OpenGL graphics. It is available at: https://sourceforge.net/projects/reliquarium/
 
 To move a block, use the arrow keys. If the automatic block selector chooses the wrong block, simply click the cursor on the desired block before using the arrow key. Thusly, the games are laptop friendly.
 
@@ -93,7 +68,7 @@ Finally, there are autosolvers embedded into the TrafficRush, Klotski, DirtyDoze
 
 ### AutoSolvers Note
 
-The slowest of the bunch is in FlatAZ, which can take up to 10 seconds to solve a level 5 shuffle. When it is done, it will countdown the remaining steps toward a solution as you continue to press the "="-key
+The slowest of the bunch is in FlatAZ, which can take up to 10 seconds to solve a level 5 shuffle. When it has finished, it will countdown the remaining steps toward a solution as you continue to press the "="-key
 
 
 --------------------------------------
@@ -101,7 +76,7 @@ The slowest of the bunch is in FlatAZ, which can take up to 10 seconds to solve 
 
 * Works on PCs or laptops running Windows or GNU/Linux.  And if GNAT is installed you can build it yourself!  But first try the delivered, prebuilt binaries.
 * Windows & GNU/Linux binaries provided, as well as full source.
-* Laptop friendly controls; can support Mac Retina displays.
+* Laptop friendly controls; can support HiDpi displays.
 * Uses SDL2;
 * Uses OpenAL-audio for sound.
 * all runtime files are in ./data/
@@ -135,10 +110,13 @@ Also, if you have wine installed on your linux system, you can run the windows E
 	* cd bin/w64/
 	* wine rufaslid.exe
 
+**If an older Linux system complains that /dev/dsp/ cannot be opened, prepend the "padsp" command:  "padsp <exe-name>".**
+
+
 ----------------------------------------------------------------
 ### Advice
 Most of these apps use SDL2, which is pretty extravagent with system memory.
-The selection program "rufaslid" uses lots of system memory.
+The selection program "rufaslid" uses some system memory too.
 You can economize by simply running your favorite puzzle directly 
 from the command line, thusly:
 EG1 (linux) : cd bin/gnu; rush
@@ -200,7 +178,7 @@ Uses the C++ programming language and fully modern OpenGL methods, with textures
 Focusing on portability and open source freedom, this project relies on SDL2, a PNG-loader by Lode Vandevenne, and OpenAL-Audio.
 
 ## future plans
-Elliminate SDL2 in favor of GLFW.
+Elliminate SDL2 in favor of GLFW. This has been already done for rufaslid, flat7 & flataz.
 
 ------------------------------------------------------------
 Open source developers are welcome to help improve or extend this app.
@@ -215,7 +193,7 @@ fastrgv@gmail.com
 This app is covered by the GNU GPL v3 as indicated in the sources:
 
 
- Copyright (C) 2022  <fastrgv@gmail.com>
+ Copyright (C) 2023  <fastrgv@gmail.com>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -255,7 +233,7 @@ are files copyrighted by Lode Vandevenne and so marked with all the details of t
 ### Other Credits and Thanks:
 Serhiy Grabarchuk and Peter Grabarchuk for their "Hole in One", "Hole in One plus 4", "Nine", and "Four Suits" puzzles.
 
-Nick Baxter, J.H.Conway, Jim Lewis, Bob Henderson, Gil Dogon, Ed Pegg Jr., J.I. Wiley, J.H. Fleming, C. L. Diamond, Sam Loyd, H. E. Dudeney, E. B. Escott, Nob Yoshigahara, James W. Stephens for the classic sliders.
+Nick Baxter, J.H.Conway, Jim Lewis, Bob Henderson, Gil Dogon, Ed Pegg Jr., J.I. Wiley, J.H. Fleming, C. L. Diamond, Sam Loyd, H. E. Dudeney, E. B. Escott, Nob Yoshigahara, James W. Stephens, Neil Bickford, et.al., for the classic sliders.
 
 
 ----------------------------------------------------------
@@ -273,6 +251,34 @@ https://gamejolt.com/@fastrgv/games
 ====================================================
 
 ## Older Revision History
+
+**ver 3.3.3 -- 05dec22**
+* Added solvers for Flat7 & FlatAZ.
+* Abandoned OSX build (because my 2013 macBookPro finally died).
+
+
+**ver 3.3.2 -- 07nov22**
+* Added required softlink in ~/libs/gnu/.
+* Improved robustness of auto-solvers.
+* Added "live" embedded solver for annoying sliders puzzles.
+* Added external solver "bfsa" for Annoying sliders that also solves Klotski-class, DirtyDozen, & TrafficRush puzzle files.
+* Revised compilation scripts to hide object files.
+
+
+**ver 3.3.1 -- 22oct22**
+* Corrected direction of traffic-rush red car.
+* Added 2 Quzzle puzzles to the Klotski app.
+* Added 16 Annoying Sliders...that look small but are not easy.
+
+
+**ver 3.3.0 -- 01oct22**
+* Now using simpler-to-setup GNU g++ for Win64.
+* Now make game subwindow grab focus upon opening.
+
+
+**ver 3.2.4 -- 16sep22**
+* Now using GNU g++ rather than defunct AdaCore g++ compiler.
+
 
 **ver 3.2.3 -- 27apr22**
 * Repaired errors in "gmg" and "linkRings".
@@ -293,6 +299,15 @@ https://gamejolt.com/@fastrgv/games
 * All new sound system using Pthreads and OpenAL.
 * Completely elliminated SFML-audio.
 * Updated SDL2 to v2.0.12
+
+
+**ver 3.1.1 -- 16oct20**
+* Made further improvements in linux sound coding.
+* Improved sound effects; now all stereo, and not too loud.
+* Improved texture handling.
+
+
+
 
 
 **ver 3.1.1 -- 16oct20**
