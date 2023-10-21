@@ -26,9 +26,19 @@ Type "7z x filename.7z" to extract the archive.
 
 
 
+
+
 # RufasSlider
 
 ## What's new:
+
+
+
+**ver 3.3.5 -- 22oct23**
+
+* Restored OSX build...but without a Mac-bundle.
+* Moved scripts into ./build/ directory, for a clean root directory.
+* Now iconify nexus window between puzzles.
 
 
 **ver 3.3.4 -- 25sep23**
@@ -45,7 +55,7 @@ See full revision history at end of this file
 ------------------------------------------------------------------
 ## RufasSlider Introduction
 
-RufaSlider is a collection of 16 different block slider puzzles for kids and casual puzzlers that works on laptops and PCs running Windows or most Linux distros.
+RufaSlider is a collection of 16 different block slider puzzles for kids and casual puzzlers that works on laptops and PCs running Windows, OSX, or most Linux distros.
 
 It includes a Klotski-style family, a DirtyDozen family, and a Traffic-Rush family.  And now these puzzle families come with AutoSolvers to help you.
 
@@ -61,9 +71,9 @@ Several other classic block slider games are included:  Fifteen, Eight, Nine, Pa
 
 * Also included are two of my own creations: Flat7, FlatAZ. These are 2-dimensional versions of my 3D "Rufas Cubes", available at:  https://sourceforge.net/projects/rufascube/
 
-* Many of these puzzles are also available as retro ASCII puzzles that run in a command-line terminal on Windows, and Gnu/Linux; and is available at: https://sourceforge.net/projects/coterminalapps/
+* Many of these puzzles are also available as retro ASCII puzzles that run in a command-line terminal on Windows, OSX, and Gnu/Linux; and is available at: https://sourceforge.net/projects/coterminalapps/
 
-* These are all 2D slider puzzles. I created four 3D slider puzzles that also run on Windows, and Linux, using OpenGL graphics. It is available at: https://sourceforge.net/projects/reliquarium/
+* These are all 2D slider puzzles. I created four 3D slider puzzles that also run on Windows, OSX, and Linux, using OpenGL graphics. It is available at: https://sourceforge.net/projects/reliquarium/
 
 To move a block, use the arrow keys. If the automatic block selector chooses the wrong block, simply click the cursor on the desired block before using the arrow key. Thusly, the games are laptop friendly.
 
@@ -79,10 +89,10 @@ The slowest of the bunch is in FlatAZ, which can take up to 10 seconds to solve 
 --------------------------------------
 ## Features
 
-* Works on PCs or laptops running Windows or GNU/Linux.  And if GNAT is installed you can build it yourself!  But first try the delivered, prebuilt binaries.
-* Windows & GNU/Linux binaries provided, as well as full source.
+* Works on PCs or laptops running Windows, OSX, or GNU/Linux.  And if GNAT is installed you can build it yourself!  But first try the delivered, prebuilt binaries.
+* Windows, OSX, & GNU/Linux binaries provided, as well as full source.
 * Laptop friendly controls; can support HiDpi displays.
-* Uses SDL2;
+* Uses SDL2 or GLFW.
 * Uses OpenAL-audio for sound.
 * all runtime files are in ./data/
 * all game data files are in ./puzzles/
@@ -97,22 +107,36 @@ The slowest of the bunch is in FlatAZ, which can take up to 10 seconds to solve 
 
 ## Setup and Running:
 
-Windows users see also "windows-setup.txt".
+Mac/OSX users see  "osx-setup.txt".
+Windows users see  "windows-setup.txt".
 
-Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
+Unzip the archive.  
+
+* On Linux & Windows, 7z [www.7-zip.org] works well for this. The proper command to extract the archive and maintain the directory structure is "7z x filename".
+
+* On OSX, Keka works well for 7Z files. The command-line for Keka is:
+	* /Applications/Keka.app/Contents/MacOS/Keka --cli 7z x (filename.7z)
+
 Open a command line terminal, then cd to the install directory.
 
 ----------------------------------------------------------------
+Mac users type "macslid.sh".
+Another option is to cd ./bin/osx/, then type any
+individual puzzle name, eg: annoy
+
+----------------------------------------------------------------
 Windows users type "winslid.bat" to begin puzzling.
-You may also cd ./bin/w64/, and then type any individual puzzle name, eg: rush.exe.
+You may also cd ./bin/w64/, and then type any 
+individual puzzle name, eg: rush.exe.
 
 ----------------------------------------------------------------
 Linux users should type "gnuslid.sh" to access any game.
-You may also ce ./bin/gnu/, and then type any individual puzzle name, eg: rush.
+You may also cd ./bin/gnu/, and then type any individual puzzle name, eg: rush.
 
 Also, if you have wine installed on your linux system, you can run the windows EXE thusly:
 
 	* cd bin/w64/
+	* wine rush.exe OR
 	* wine rufaslid.exe
 
 **If an older Linux system complains that /dev/dsp/ cannot be opened, prepend the "padsp" command:  "padsp <exe-name>".**
@@ -127,6 +151,7 @@ from the command line, thusly:
 EG1 (linux) : cd bin/gnu; rush
 EG2 (Windows) : cd bin\w64; rush.exe
 EG3 (wine) : cd bin/w64; wine rush.exe
+EG4 (osx) : cd bin/osx; rush
 
 ----------------------------------------------------------------
 
@@ -162,6 +187,9 @@ Please send questions, comments, corrections or improvements to
 Begin by installing GNU g++.
 
 -------------------------------------------------------
+**OSX** => osxAll.sh
+
+-------------------------------------------------------
 **Windows64** => w64all.bat
 
 Windows developers, please also read "gnuOnWindows.txt".
@@ -178,7 +206,7 @@ If the delivered linux binary does not run, rebuild all using gnuAll.sh.  In cas
 -------------------------------------------------------
 
 ## what is special about this project?
-Uses the C++ programming language and fully modern OpenGL methods, with textures, shaders and uniforms.  Achieves [at least] version 3.3 core profile contexts.  Compiles and runs on Windows & GNU/Linux systems.
+Uses the C++ programming language and fully modern OpenGL methods, with textures, shaders and uniforms.  Achieves [at least] version 3.3 core profile contexts.  Compiles and runs on Windows, OSX, & GNU/Linux systems.
 
 Focusing on portability and open source freedom, this project relies on SDL2, a PNG-loader by Lode Vandevenne, and OpenAL-Audio.
 
@@ -311,14 +339,6 @@ https://gamejolt.com/@fastrgv/games
 * Improved sound effects; now all stereo, and not too loud.
 * Improved texture handling.
 
-
-
-
-
-**ver 3.1.1 -- 16oct20**
-* Made further improvements in linux sound coding.
-* Improved sound effects; now all stereo, and not too loud.
-* Improved texture handling.
 
 
 
