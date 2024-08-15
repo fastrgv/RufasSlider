@@ -33,6 +33,14 @@ Type "7z x filename.7z" to extract the archive.
 ## What's new:
 
 
+**ver 3.3.6 -- 17aug24**
+
+* Improved/generalized OSX build scripts.
+* Updated OpenAL sound utility with volume control.
+* 0-key now saves a setpoint for a) dirty12, b) klotsky, c) annoying-sliders
+* 1-key now restores the setpoint for a) dirty12, b) klotsky, c) annoying-sliders
+...these last two enhancements allow trying equally promising alternate strategies.
+
 
 **ver 3.3.5 -- 22oct23**
 
