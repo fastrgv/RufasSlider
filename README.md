@@ -32,6 +32,10 @@ Type "7z x filename.7z" to extract the archive.
 
 ## What's new:
 
+**ver 3.3.7 -- 9feb26**
+
+* Replace wrong DLLs so that Windows puzzles all run properly.
+
 
 **ver 3.3.6 -- 17aug24**
 
