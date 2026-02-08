@@ -3,7 +3,7 @@
 
 Click on the large tar.gz file under releases to download all source & binaries (both Mac & Linux), or use this link:
 
-https://github.com/fastrgv/RufasSlider/releases/download/v3.3.6/rs17aug24.7z
+https://github.com/fastrgv/RufasSlider/releases/download/v3.3.7/rsl9feb26.7z
 
 Type "7z x filename.7z" to extract the archive.
 
@@ -25,7 +25,8 @@ Type "7z x filename.7z" to extract the archive.
 
 
 
-
+Permalink:
+https://sourceforge.net/projects/rufasslider/files/latest/download
 
 
 # RufasSlider
