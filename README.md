@@ -199,6 +199,22 @@ Please send questions, comments, corrections or improvements to
 
 Begin by installing GNU g++.
 
+------------------------------------------------------
+#### linux users note
+
+Before attempting to build these apps on linux 
+you might need to update your libraries to include
+	xorg-dev, libx11-dev, & libopenal-dev
+so that the link-step succeeds.
+
+Use the following commands:
+
+* sudo apt-get update
+* sudo apt-get install xorg-dev
+* sudo apt-get install libx11-dev
+* sudo apt-get install libopenal-dev
+------------------------------------------------------
+
 -------------------------------------------------------
 **OSX** => osxAll.sh
 
