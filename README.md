@@ -33,6 +33,14 @@ https://sourceforge.net/projects/rufasslider/files/latest/download
 
 ## What's new:
 
+
+**ver 3.3.8 -- 17sep26**
+
+* Added "restarting" message on the terminal window whenever user hits the r-key.
+* Improved response to direction-keys.
+* Corrected code possibly causing movement freezes.
+
+
 **ver 3.3.7 -- 9feb26**
 
 * Replace wrong DLLs so that Windows puzzles all run properly.
