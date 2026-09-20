@@ -16,15 +16,6 @@ Type "7z x filename.7z" to extract the archive.
 
 
 
-
-
-
-
-
-
-
-
-
 Permalink:
 https://sourceforge.net/projects/rufasslider/files/latest/download
 
@@ -34,16 +25,24 @@ https://sourceforge.net/projects/rufasslider/files/latest/download
 ## What's new:
 
 
+
+**ver 3.3.9 -- 21sep26**
+
+* Enlarged hard-coded constant in TrafficRush that was causing errors/freezes.
+* Improved robustness of all puzzles.
+
+
 **ver 3.3.8 -- 17sep26**
 
 * Added "restarting" message on the terminal window whenever user hits the r-key.
 * Improved response to direction-keys.
-* Corrected code possibly causing movement freezes.
+* Corrected code that possibly caused movement freezes.
 
 
 **ver 3.3.7 -- 9feb26**
 
 * Replace wrong DLLs so that Windows puzzles all run properly.
+
 
 
 **ver 3.3.6 -- 17aug24**
@@ -78,11 +77,15 @@ See full revision history at end of this file
 
 RufaSlider is a collection of 16 different block slider puzzles for kids and casual puzzlers that works on laptops and PCs running Windows, OSX, or most Linux distros.
 
-It includes a Klotski-style family, a DirtyDozen family, and a Traffic-Rush family.  And now these puzzle families come with AutoSolvers to help you.
+It includes a Klotski family, a DirtyDozen family, an Annoying family, and a Traffic-Rush family.  And now these puzzle families come with AutoSolvers to help you.
+
+-----------------------------------------------------------------
 
 The Klotski family uses rectangles of 4 sizes: 1x1, 2x2, 1x2, 2x1. The objective in each game is stated near the window top, but usually involves moving a large block to a specified location within the window.  
 
 The DirtyDozen family is similar except there are L-shaped puzzle pieces.
+
+The Annoying family has irregularly shaped boards & pieces.
 
 The Traffic-Rush family uses cars or trucks that can only move [roll] lengthwise...the goal being to move the red car toward the shaded "exit door".
 
@@ -90,11 +93,15 @@ The game description files are simple text files that allow users to define addi
 
 Several other classic block slider games are included:  Fifteen, Eight, Nine, Panama, MaBoy, GetMyGoat, 2-versions of HoleInOne, Suits, and 2-versions of LinkRings. 
 
-* Also included are two of my own creations: Flat7, FlatAZ. These are 2-dimensional versions of my 3D "Rufas Cubes", available at:  https://sourceforge.net/projects/rufascube/
+-----------------------------------------------------------------
 
-* Many of these puzzles are also available as retro ASCII puzzles that run in a command-line terminal on Windows, OSX, and Gnu/Linux; and is available at: https://sourceforge.net/projects/coterminalapps/
+Also included are two of my own creations: Flat7, FlatAZ. These are 2-dimensional versions of my 3D "Rufas Cubes", available at:  https://sourceforge.net/projects/rufascube/
 
-* These are all 2D slider puzzles. I created four 3D slider puzzles that also run on Windows, OSX, and Linux, using OpenGL graphics. It is available at: https://sourceforge.net/projects/reliquarium/
+Many of these puzzles are also available as retro ASCII puzzles that run in a command-line terminal on Windows, OSX, and Gnu/Linux; and is available at: https://sourceforge.net/projects/coterminalapps/
+
+These are all 2D slider puzzles. I created four 3D slider puzzles that also run on Windows, OSX, and Linux, using OpenGL graphics. It is available at: 
+
+	https://sourceforge.net/projects/reliquarium/
 
 To move a block, use the arrow keys. If the automatic block selector chooses the wrong block, simply click the cursor on the desired block before using the arrow key. Thusly, the games are laptop friendly.
 
@@ -141,24 +148,37 @@ Unzip the archive.
 Open a command line terminal, then cd to the install directory.
 
 ----------------------------------------------------------------
-Mac users type "macslid.sh".
+Windows users type "winslid.bat" to begin puzzling from the selection window.
+If you know which puzzle you want to play, you can cd to .\bin\w64\, 
+and then type any individual puzzle name at the command line, eg: rush.exe.
+
+----------------------------------------------------------------
+Mac users type "macslid.sh". 
+
 Another option is to cd ./bin/osx/, then type any
 individual puzzle name, eg: annoy
 
-----------------------------------------------------------------
-Windows users type "winslid.bat" to begin puzzling.
-You may also cd ./bin/w64/, and then type any 
-individual puzzle name, eg: rush.exe.
+Another option is to cd ./bin/osx-static/, then type any
+individual puzzle name, eg: annoy
+This second directory contains an alternate build using
+static libraries, so the EXEs are larger, here.
 
 ----------------------------------------------------------------
 Linux users should type "gnuslid.sh" to access any game.
-You may also cd ./bin/gnu/, and then type any individual puzzle name, eg: rush.
+
+You may also cd ./bin/gnu/, OR to ./bin/mint/,
+and then type any individual puzzle name, eg: rush.
+The build in the first directory uses a very old compiler
+to maximize the linux distros on which it can run.
+This second directory contains an alternate build using
+a newer compiler.
+
 
 Also, if you have wine installed on your linux system, you can run the windows EXE thusly:
 
-	* cd bin/w64/
-	* wine rush.exe OR
-	* wine rufaslid.exe
+* cd bin/w64/
+* wine rush.exe OR
+* wine rufaslid.exe
 
 **If an older Linux system complains that /dev/dsp/ cannot be opened, prepend the "padsp" command:  "padsp <exe-name>".**
 
@@ -169,10 +189,11 @@ Most of these apps use SDL2, which is pretty extravagent with system memory.
 The selection program "rufaslid" uses some system memory too.
 You can economize by simply running your favorite puzzle directly 
 from the command line, thusly:
-EG1 (linux) : cd bin/gnu; rush
-EG2 (Windows) : cd bin\w64; rush.exe
-EG3 (wine) : cd bin/w64; wine rush.exe
-EG4 (osx) : cd bin/osx; rush
+
+* EG1 (linux) : cd bin/gnu; rush
+* EG2 (Windows) : cd bin\w64; rush.exe
+* EG3 (wine) : cd bin/w64; wine rush.exe
+* EG4 (osx) : cd bin/osx; rush
 
 ----------------------------------------------------------------
 
@@ -205,14 +226,12 @@ Please send questions, comments, corrections or improvements to
 
 ## Build Instructions:
 
-Begin by installing GNU g++.
-
 ------------------------------------------------------
 #### linux users note
 
-Before attempting to build these apps on linux 
-you might need to update your libraries to include
-	xorg-dev, libx11-dev, & libopenal-dev
+Before attempting to build these apps on linux you might 
+need to update your libraries to include
+xorg-dev, libx11-dev, & libopenal-dev
 so that the link-step succeeds.
 
 Use the following commands:
@@ -223,18 +242,33 @@ Use the following commands:
 * sudo apt-get install libopenal-dev
 ------------------------------------------------------
 
--------------------------------------------------------
-**OSX** => osxAll.sh
+Begin by installing GNU g++. Then cd to the ./build/ directory.
+Minor edits may be necessary...
 
 -------------------------------------------------------
-**Windows64** => w64all.bat
+**OSX**
+Inspect/edit ocmp.sh, ocmpg.sh, ocmpss.sh, ocmpgs,sh so they refer
+to the proper GNU g++ installation directory. Then:
+
+	osxAll.sh   or use  osxAllStatic.sh  (I believe both should work).
+
+-------------------------------------------------------
+**Windows**
+Inspect/edit setpath64.bat so it refers to the proper 
+GNU g++ installation directory. then:
+
+	setpath64.bat;  w64all.bat
 
 Windows developers, please also read "gnuOnWindows.txt".
 
 ------------------------------------------------------
-**GNU/Linux** => gnuAll.sh:
+**GNU/Linux**
+Inspect/edit lcmp?.sh to ensure they point to the
+GNU g++ installation directory.  Then:
 
-utilizes shared libraries that are delivered in this bundle under ./libs/gnu/.  These were used to build the executable, which should run in the presence of ./libs/gnu/, whether or not your system already has those libraries.  The runtime loader will prefer system libraries if they are present.
+	gnuAll.sh:
+
+...utilizes shared libraries that are delivered in this bundle under ./libs/gnu/.  These were used to build the executable, which should run in the presence of ./libs/gnu/, whether or not your system already has those libraries.  The runtime loader will prefer system libraries if they are present.
 
 If the delivered linux binary does not run, rebuild all using gnuAll.sh.  In case of problems.
 
@@ -248,7 +282,8 @@ Uses the C++ programming language and fully modern OpenGL methods, with textures
 Focusing on portability and open source freedom, this project relies on SDL2, a PNG-loader by Lode Vandevenne, and OpenAL-Audio.
 
 ## future plans
-Elliminate SDL2 in favor of GLFW. This has been already done for rufaslid, flat7 & flataz.
+* Elliminate SDL2 in favor of GLFW. This has been already done for rufaslid, flat7 & flataz.
+* Convert all from C++ to Ada. Originally, everything was written in C++ but certain advanced solvers and algorithms were already written in Ada, so I used them here.
 
 ------------------------------------------------------------
 Open source developers are welcome to help improve or extend this app.
@@ -263,7 +298,7 @@ fastrgv@gmail.com
 This app is covered by the GNU GPL v3 as indicated in the sources:
 
 
- Copyright (C) 2023  <fastrgv@gmail.com>
+ Copyright (C) 2026  <fastrgv@gmail.com>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -375,9 +410,5 @@ https://gamejolt.com/@fastrgv/games
 * Made further improvements in linux sound coding.
 * Improved sound effects; now all stereo, and not too loud.
 * Improved texture handling.
-
-
-
-
 
 
