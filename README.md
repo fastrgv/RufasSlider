@@ -30,6 +30,7 @@ https://sourceforge.net/projects/rufasslider/files/latest/download
 
 * Enlarged hard-coded constant in TrafficRush that was causing errors/freezes.
 * Improved robustness of all puzzles.
+* Improved documentation.
 
 
 **ver 3.3.8 -- 17sep26**
@@ -97,7 +98,8 @@ Several other classic block slider games are included:  Fifteen, Eight, Nine, Pa
 
 Also included are two of my own creations: Flat7, FlatAZ. These are 2-dimensional versions of my 3D "Rufas Cubes", available at:  https://sourceforge.net/projects/rufascube/
 
-Many of these puzzles are also available as retro ASCII puzzles that run in a command-line terminal on Windows, OSX, and Gnu/Linux; and is available at: https://sourceforge.net/projects/coterminalapps/
+Many of these puzzles are also available as retro ASCII puzzles that run in a command-line terminal on Windows, OSX, and Gnu/Linux; and is available at: 
+https://sourceforge.net/projects/sliderpuzzles/
 
 These are all 2D slider puzzles. I created four 3D slider puzzles that also run on Windows, OSX, and Linux, using OpenGL graphics. It is available at: 
 
@@ -105,7 +107,7 @@ These are all 2D slider puzzles. I created four 3D slider puzzles that also run 
 
 To move a block, use the arrow keys. If the automatic block selector chooses the wrong block, simply click the cursor on the desired block before using the arrow key. Thusly, the games are laptop friendly.
 
-Rush & maboy allow mouse drags to initiate the moves.
+Most puzzles also allow mouse drags to initiate the moves.
 
 Finally, there are autosolvers embedded into the TrafficRush, Klotski, DirtyDozen, LinkRings, Maboy Flat7, FlatAZ and Annoy games to be used interactively, using the (=)-key.  This provides an amazing tool to learn to solve seemingly hopeless problems.
 
@@ -197,7 +199,7 @@ from the command line, thusly:
 
 ----------------------------------------------------------------
 
-In many puzzles, a mouse drag can initiate a block move.  However, the preferred method to move a block is to select it using a mouse click, then use the arrow keys  (up),(dn),(lf),(rt).  The block selection is not necessary when only one block can move in the indicated direction. EG FourSuits, eight & fifteen never require block selection since there is only 1 empty space.
+In many puzzles, a mouse drag can initiate a block move.  However, the usual method to move a block is to select it using a mouse click, then use the arrow keys  (up),(dn),(lf),(rt).  The block selection is not necessary when only one block can move in the indicated direction. EG FourSuits, eight & fifteen never require block selection since there is only 1 empty space.
 
 At any time, hit the letter (r) to reset/restart, or (esc) to quit.  
 
